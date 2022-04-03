@@ -1,0 +1,50 @@
+h2{
+    padding: 10px;
+}
+.userListEdit{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.userListDelete{
+    color: red;
+    cursor: pointer;
+}
+
+
+.titleName{
+    margin: 20px;
+}
+
+.searchBar{
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+.searchTerm {
+    border: 3px solid #00B4CC;
+   
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchBut{
+    width: 40px;
+    height: 33px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}

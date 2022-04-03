@@ -1,0 +1,28 @@
+.featured{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.featuredItem{
+    flex: 1;
+    margin: 10px 20px;
+    padding: 30px;
+    border-radius: 10px ;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+}
+.featuredTitle{
+    font-size: 20px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+.featuredTotal{
+    font-size: 30px;
+    font-weight: 600;
+}
+.featuredTotalName{
+    align-items: center;
+    margin-left: 10px;
+}
