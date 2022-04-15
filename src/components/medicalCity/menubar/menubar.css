@@ -17,11 +17,11 @@ nav {
 }
 
 
-nav ul {
+.menu_parent {
     display: flex;
 }
 
-nav>ul li {
+.menu_parent li {
     list-style: none;
     /* bỏ dấu chấm mặc định của li */
     /* kẻ đường bên trái và bên phải của li */
@@ -29,7 +29,7 @@ nav>ul li {
     border-left: 1px solid rgb(3, 3, 3);
 }
 
-nav>ul li a {
+.menu_parent li a {
     display: block;
     padding: 0 25px;
     line-height: 50px;
@@ -40,7 +40,7 @@ nav>ul li a {
 
 /* Khi hover đến li, tô màu cho thẻ a */
 
-nav ul li:hover>a {
+.menu_parent li:hover>a {
     background: red;
     opacity: .7;
     color: yellow;
@@ -52,14 +52,17 @@ nav ul li:hover>a {
 
 /*Ẩn các menu con*/
 
-nav li ul {
+.menu_child {
     display: none;
-    min-width: 250px;
+    width: 250px;
     position: absolute;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   
 }
-
-nav li>ul li {
+.menu_child .link{
+    padding: 0;
+}
+.menu_child li {
     width: 100%;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -70,7 +73,7 @@ nav li>ul li {
 
 /*khi hover thì hiện menu con*/
 
-nav li:hover>ul {
+nav li:hover> .menu_child {
     display: block;
 }
 .link{

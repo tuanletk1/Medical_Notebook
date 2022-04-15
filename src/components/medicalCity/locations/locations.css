@@ -9,7 +9,7 @@
     padding: 20px;
 }
 
-table {
+.table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
@@ -18,33 +18,30 @@ table {
     overflow: hidden;
 }
 
-thead,
-th {
+
+.thLocaltion {
     padding: 15px 20px;
     text-align: center;
 }
 
-td {
+.tdLocations {
     padding: 10px 0px 10px 0px;
     text-align: center;
 }
 
-th {
+.thLocaltions {
     background-color: #ba68c8;
     color: #fafafa;
     font-family: 'Open Sans', Sans-serif;
     font-weight: 200;
     text-transform: uppercase;
+    padding: 15px;
 }
 
-tr {
+.trLocations {
     width: 100%;
     background-color: #fafafa;
     font-family: 'Montserrat', sans-serif;
-}
-
-tr:nth-child(even) {
-    background-color: #eeeeee;
 }
 
 .search {

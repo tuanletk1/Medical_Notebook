@@ -9,12 +9,15 @@ import User from './page/user/User'
 import NewUser from './page/newUser/NewUser'
 import PersonalInfo from './page/personalInfo/PersonalInfo'
 import './MedicalCity.css'
+import StaffList from './page/staffList/StaffList';
 function MedicalCity() {
   return (
     <Router>
+       
       <div className="App">
         <Header />
         <Menubar />
+        
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -30,6 +33,9 @@ function MedicalCity() {
           </Route>
           <Route path='/personalInfo'>
             <PersonalInfo />
+          </Route>
+          <Route path='/staff'>
+            <StaffList />
           </Route>
           
         </Switch>

@@ -1,0 +1,119 @@
+.filter {
+    margin: 10px 50px;
+    /* padding: 20px; */
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.filterTitle {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.tableListRegisterVacc {
+    margin-top: 30px;
+
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+
+.titleName{
+    margin: 20px;
+    font-size: 25px;
+}
+
+.searchBar{
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+.searchTerm {
+    border: 3px solid #00B4CC;
+   
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+
+.searchBut{
+    width: 40px;
+    height: 33px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.thListRegisterVac {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.tdListRegisterVac {
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+.thListRegisterVac {
+    background-color: #ba68c8;
+    color: #fafafa;
+    font-family: 'Open Sans', Sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.trListRegisterVac {
+    width: 100%;
+    background-color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.vaccineListEdit{
+    color: rgb(29, 0, 248);
+    cursor: pointer;
+    margin-right: 20px;
+}
+.vaccineListDelete{
+    color: red;
+    cursor: pointer;
+}
+/* form profile vac */
+.profile_vac{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+
+}
+.active{
+    display: block;
+}
+.profile_vac-form{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: auto;
+    width: 920px;
+    height: 500px;
+    background: red;
+    border: 1px solid #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+

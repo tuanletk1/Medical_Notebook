@@ -3,6 +3,18 @@
     padding: 10px;
     font-weight: 600;
 }
+.selection{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 20px;
+    text-align: center;
+}
+.selection>label{
+    padding-right: 100px;
+}
+.selection>input{
+    padding: 10px;
+}
 .newUserForm{
     display: flex;
     flex-wrap: wrap; 

@@ -3,9 +3,9 @@ import CakeIcon from '@mui/icons-material/Cake';
 import HomeIcon from '@mui/icons-material/Home';
 import PublishIcon from '@mui/icons-material/Publish';
 import { Link } from "react-router-dom";
-import './personalInfo.css'
+import './infoAccountStaff.css'
 
-export default function User() {
+export default function InfoAccountStaff() {
   return (
     <div className='user'>
         <div className="userTitleContainer">
@@ -17,7 +17,7 @@ export default function User() {
               <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" className='userShowImg' />
               <div className="userShowTopTitle"> 
                 <span className="userShowUsername">TuanLe</span>
-                <span className="userShowUserTitle">Admin</span>
+                <span className="userShowUserTitle">Quản lý bệnh viện Hoàn Mỹ</span>
               </div>
             </div>
             <div className="userShowbutton">
