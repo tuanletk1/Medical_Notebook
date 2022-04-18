@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Symptom extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'vacc_order_register_id',
+        'descriptions',
+    ];
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'symptoms';
 }
