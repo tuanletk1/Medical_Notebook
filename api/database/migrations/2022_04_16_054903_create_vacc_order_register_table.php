@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vacc_oder_register', function (Blueprint $table) {
+        Schema::create('vacc_order_register', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacc_oder_register');
+        Schema::dropIfExists('vacc_order_register');
     }
 };

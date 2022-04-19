@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('symptoms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('vacc_oder_register_id');
-            $table->foreign('vacc_oder_register_id')->references('id')->on('vacc_oder_register');
+            $table->unsignedBigInteger('vacc_order_register_id');
+            $table->foreign('vacc_order_register_id')->references('id')->on('vacc_order_register');
             $table->string('descriptions', 255);
             $table->timestamps();
         });
