@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('address_injection_id');
             $table->foreign('address_injection_id')->references('id')->on('address_injections');
             $table->string('name', 255);
-            $table->timestamp('date_of_birth');
+            $table->timestamp('date_of_birth')->nullable();
             $table->string('cmnd', 20);
             $table->string('sothe_bhyt', 20);
             $table->string('phone', 20);

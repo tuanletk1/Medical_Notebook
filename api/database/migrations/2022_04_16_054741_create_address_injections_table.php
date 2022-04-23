@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('ward_id')->references('id')->on('wards');
             $table->string('name', 255);
             $table->smallInteger('time')->default(1);
-            $table->timestamp('date');
+            $table->timestamp('date')->nullable();
             $table->timestamps();
         });
     }

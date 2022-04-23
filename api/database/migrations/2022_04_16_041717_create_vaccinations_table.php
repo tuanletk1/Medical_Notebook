@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('origin', 255);
             $table->string('lot_number', 255);
             $table->timestamp('date_of_manufacture');
-            $table->timestamp('age_use');
+            $table->timestamp('age_use')->nullable();
             $table->integer('quantity')->default(0);
             $table->timestamps();
         });

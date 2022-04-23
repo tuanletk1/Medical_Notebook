@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('workplace', 255);
             $table->string('email', 255);
             $table->timestamps();
-            $table->timestamp('deleted_at');
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
