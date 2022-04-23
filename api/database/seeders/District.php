@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class District extends Seeder
@@ -14,6 +14,27 @@ class District extends Seeder
      */
     public function run()
     {
-        //
+        $now = Carbon::now();
+        $districts = [
+            'Huyện Hoà Vang',
+            'Quận Thanh Khê',
+            'Quận Sơn Trà',
+            'Quận Ngũ Hành Sơn',
+            'Quận Liên Chiểu',
+            'Quận Hải Châu',
+            'Quận Cẩm Lệ',
+        ];
+        $default = [
+            'name' => 'Huyện Hoà Vang',
+            'created_at' => $now,
+            'updated_at' => $now
+        ];
+        $data = [];
+        foreach ($districts as $district) {
+            $default['name'] = $district;
+            $data[] = $default;
+        }
+
+        \App\Models\District::insert($data);
     }
 }
