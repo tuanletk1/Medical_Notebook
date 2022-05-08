@@ -14,7 +14,7 @@ class AddressInjectionVacc extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'vaccination_id',
         'address_injection_id',
     ];
@@ -24,5 +24,5 @@ class AddressInjectionVacc extends Model
      *
      * @var string
      */
-    protected $table = 'address_injection_vacc';
+    protected string $table = 'address_injection_vacc';
 }

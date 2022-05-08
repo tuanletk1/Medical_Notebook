@@ -14,7 +14,7 @@ class Symptom extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'vacc_order_register_id',
         'descriptions',
     ];
@@ -24,5 +24,5 @@ class Symptom extends Model
      *
      * @var string
      */
-    protected $table = 'symptoms';
+    protected string $table = 'symptoms';
 }

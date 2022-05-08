@@ -14,7 +14,7 @@ class ProfileAfterVaccination extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'user_id',
         'symptom',
     ];
@@ -24,5 +24,5 @@ class ProfileAfterVaccination extends Model
      *
      * @var string
      */
-    protected $table = 'profile_after_vaccinations';
+    protected string $table = 'profile_after_vaccinations';
 }
