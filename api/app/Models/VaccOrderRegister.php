@@ -14,7 +14,7 @@ class VaccOrderRegister extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'user_id',
         'address_injection_id',
         'staff_id',
@@ -26,5 +26,5 @@ class VaccOrderRegister extends Model
      *
      * @var string
      */
-    protected $table = 'vacc_order_register';
+    protected string $table = 'vacc_order_register';
 }

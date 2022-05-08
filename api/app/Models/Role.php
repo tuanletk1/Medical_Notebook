@@ -14,7 +14,7 @@ class Role extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'name',
     ];
 
@@ -23,5 +23,5 @@ class Role extends Model
      *
      * @var string
      */
-    protected $table = 'roles';
+    protected string $table = 'roles';
 }

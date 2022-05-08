@@ -40,7 +40,7 @@ class AddressInjection extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected array $fillable = [
         'ward_id',
         'name',
         'time',
@@ -61,5 +61,5 @@ class AddressInjection extends Model
      *
      * @var string
      */
-    protected $table = 'address_injections';
+    protected string $table = 'address_injections';
 }
