@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -29,26 +30,52 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $this->getUserData($request);
+
+        $user = User::create($data);
+
+        return response()->success(null, $user);
+    }
+
+    /**
+     * Get store data
+     *
+     * @param Request $request RegisterUserRequest.
+     *
+     * @return array
+     */
+    private function getUserData(Request $request)
+    {
         $data = $request->only([
             'fullname',
             'cmnd_cccd',
-            'img_cmnd_cccd_truoc',
-            'img_cmnd_cccd_sau',
             'district',
             'ward',
             'phone',
-            'password',
             'role_id',
-            'img_signature',
             'gender',
             'job',
             'workplace',
             'email',
         ]);
 
-        $user = User::save($data);
+        if ($request->has('password')) {
+            $data['password'] = bcrypt($request->get('password'));
+        }
 
-        return response()->success(null, $user);
+        if ($request->hasFile('img_cmnd_cccd_truoc')) {
+            $data['img_cmnd_cccd_truoc'] = saveFile($request->file('img_cmnd_cccd_truoc'));
+        }
+
+        if ($request->hasFile('img_cmnd_cccd_sau')) {
+            $data['img_cmnd_cccd_sau'] = saveFile($request->file('img_cmnd_cccd_sau'));
+        }
+
+        if ($request->hasFile('img_signature')) {
+            $data['img_signature'] = saveFile($request->file('img_signature'));
+        }
+
+        return $data;
     }
 
     /**
@@ -72,22 +99,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->only([
-            'fullname',
-            'cmnd_cccd',
-            'img_cmnd_cccd_truoc',
-            'img_cmnd_cccd_sau',
-            'district',
-            'ward',
-            'phone',
-            'password',
-            'role_id',
-            'img_signature',
-            'gender',
-            'job',
-            'workplace',
-            'email',
-        ]);
+        $data = $this->getUserData($request);
 
         $user = User::find($id)->fill($data)->save();
 

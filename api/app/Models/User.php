@@ -16,7 +16,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'fullname',
         'cmnd_cccd',
         'img_cmnd_cccd_truoc',
@@ -38,5 +38,5 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected string $table = 'users';
+    protected $table = 'users';
 }

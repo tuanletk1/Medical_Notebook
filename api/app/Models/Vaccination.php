@@ -14,7 +14,7 @@ class Vaccination extends Model
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'origin',
         'lot_number',
@@ -38,5 +38,5 @@ class Vaccination extends Model
      *
      * @var string
      */
-    protected string $table = 'vaccinations';
+    protected $table = 'vaccinations';
 }

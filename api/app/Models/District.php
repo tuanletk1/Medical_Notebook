@@ -14,7 +14,7 @@ class District extends Model
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'name',
     ];
 
@@ -23,5 +23,5 @@ class District extends Model
      *
      * @var string
      */
-    protected string $table = 'districts';
+    protected $table = 'districts';
 }

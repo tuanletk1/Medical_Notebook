@@ -14,7 +14,7 @@ class StaffInjection extends Model
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'user_id',
         'address_injection_id',
         'name',
@@ -30,5 +30,5 @@ class StaffInjection extends Model
      *
      * @var string
      */
-    protected string $table = 'staff_injection';
+    protected $table = 'staff_injection';
 }
