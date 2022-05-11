@@ -13,12 +13,7 @@ export default function ListAfterVac() {
         { id: 2, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
 
     ]
-    const handleShowVac = () => {
-        console.log(1234)
-        const profile_vac = document.querySelector('.profile_vac')
-        console.log(profile_vac)
-        profile_vac.addClass('active')
-    }
+  
     return (
         <div>
             <div class="filter">
@@ -49,7 +44,7 @@ export default function ListAfterVac() {
                             <th className='thListRegisterVac'>CCCD/CMND</th>
                             <th className='thListRegisterVac'>Số điện thoại</th>
                             <th className='thListRegisterVac'>Giới tính</th>
-                            <th className='thListRegisterVac'>Ngày đăsng ký tiêm</th>
+                            <th className='thListRegisterVac'>Ngày đăng ký tiêm</th>
                             <th className='thListRegisterVac'>Buổi tiêm</th>
                             <th className='thListRegisterVac'>Thao tác</th>
                         </tr>
@@ -67,9 +62,9 @@ export default function ListAfterVac() {
                                     <td className='tdListRegisterVac'>{data.RegisterDay}</td>
                                     <td className='tdListRegisterVac'>{data.RegisterSesion}</td>
                                     <td className='tdListRegisterVac'>
-                                        <BallotIcon onClick={() => handleShowVac()} className='vaccineListEdit' />
+                                       
                                         <Link to='./editvaccine'>
-                                            <EditIcon className="vaccineListEdit" />
+                                            <BallotIcon className="vaccineListEdit" />
                                         </Link>
 
                                         <DeleteIcon className="vaccineListDelete" />
@@ -80,21 +75,6 @@ export default function ListAfterVac() {
                     </tbody>
                 </table>
             </div>
-            <div className="profile_vac">
-                <div className="profile_vac-form">
-                    <input type="text" />
-                    <h1>thông tin</h1>
-                    <input type="text" />
-                    <h1>thông tin</h1>
-                    <input type="text" />
-                    <h1>thông tin</h1>
-                    <input type="text" />
-                </div>
-            </div>
-
-
-
-            )
         </div>
     )
 }

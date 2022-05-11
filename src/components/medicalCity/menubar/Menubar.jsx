@@ -1,32 +1,31 @@
 import React from 'react'
-import './menubar.css';
+import './menubarAdmin.css';
 import { Link } from 'react-router-dom'
 // import UserList from './../page/userList/'
 import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function Menubar() {
     return (
-        <div class="menu">
-            <nav>
-                <ul className='menu_parent'>
-                    <Link to='/' className='link'>
-                        <li><a title="Trang chủ">Trang chủ</a></li>
-                    </Link>
-                    <li><a href="#">Thông tin cá nhân</a>
-                        <ul className='menu_child'>
-                            <Link to='/PersonalInfo'  className='link'>
-                                <li><a href="#">Thông tin cá nhân</a></li>
-                            </Link>
-                            <li><a href="#">Mật khẩu</a></li>
-                        </ul>
 
+        <div className="group_menu">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__listlogo">
+                        
+                        <h2>MEDICAL NOTEBOOK</h2>
                     </li>
-                    <li><a href="#">Quản lý tài khoản</a>
-                        <ul className='menu_child'>
+                    <Link to='/' className='link'>
+                        <li class="nav__listitem">Trang chủ</li>
+                    </Link>
+                    
+                    <Link to='/PersonalInfo' className='link'>
+                        <li class="nav__listitem">Thông tin cá nhân</li>
+                    </Link>
+                    <li class="nav__listitem">Quản lý tài khoản
+                        <ul class="nav__listitemdrop">
                             <Link to='/user' className='link'>
                                 <li><a href="#">Người dùng</a></li>
                             </Link>
-
                             <Link to='/staff' className='link'>
                                 <li><a href="#">Nhân viên y tế</a></li>
                             </Link>
@@ -36,26 +35,27 @@ export default function Menubar() {
 
                         </ul>
                     </li>
-                    <li><a href="#">Quản lý dữ liệu</a>
-                        <ul className='menu_child'>
+                    <li class="nav__listitem">Quản lý dữ liệu
+                        <ul class="nav__listitemdrop">
                             <Link to='/backup' className='link'>
                                 <li><a href="#">Sao lưu dữ liệu</a></li>
                             </Link>
-
                             <Link to='/sync' className='link'>
                                 <li><a href="#">Khôi phục dữ liệu</a></li>
                             </Link>
                         </ul>
                     </li>
                     
-                </ul>
-                <div className="logoutBtn">
-                    <Link to='./login' className='link'> 
-                    <li><a href="">Đăng xuất</a></li>    
-                    </Link>                  
-                 </div>
-            </nav>
+                    <li class="nav__listitem">Đăng xuất</li>
 
+                </ul>
+            </nav>
+            <div className="profile_mini">
+                <h3>Admin Tuan</h3>
+
+                <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
+
+            </div>
         </div>
     )
 }

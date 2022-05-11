@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+.content {
+    background: #f3ffff;
+
+}
+
+.content .user-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.content .user-container .user-avatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 700;
+    gap: 20px;
+}
+
+.content .user-container .user-avatar .user-avatar_desc p {
+    font-size: 20px;
+    line-height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.content .user-container .user-avatar .user-avatar_desc span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.content .user-container .user-avatar .user-avatar_img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.content .user-container .user-avatar .user-avatar_options span {
+    color: #AAB2C8;
+    font-size: 30px;
+}
+
+.content .user-container .user_timer input {
+    border: 1px solid #333;
+    padding: 3px 10px;
+}
+
+.content .form-container {
+    margin-left: 300px;
+    background: whitesmoke;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.content .form-container .form-title {
+    padding: 30px;
+}
+
+.content .form-container .form-title h2 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.content .form-container .form-steps {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.content .form-container .form-steps .form-steps_item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    background: #E7E7E7;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content .form-container .form-steps .form-steps_item p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.content .form-container .form-steps .form-steps_item span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.content .form-container .form-steps .active {
+    background: #DCDCFA;
+}
+
+.content .form-container .form-content {
+    width: 90%;
+    margin: 20px auto 0px;
+}
+
+.content .form-container .form-content_middle {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content .form-container .form-content_middle .form-helper_desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.content .form-container .form-content_middle .flex-between {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.content .form-container .form-content_middle .flex-between .form-group {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+}
+
+.content .form-container .form-content_middle .form-helper_desc {
+    padding: 5px 0px;
+}
+
+.content .form-container .form-content_middle .form-branch {
+    padding: 20px 0px;
+}
+
+.content .form-container .form-content_middle .form-branch .form-group:first-child input {
+    text-align: center;
+}
+
+.content .form-container .form-content_middle .form-branch .form-group:last-child {
+    text-align: center;
+}
+
+.content .form-container .form-content_middle .form-table table {
+    background: #fff;
+    border-collapse: collapse;
+}
+
+.content .form-container .form-content_middle .form-table table tr td {
+    padding: 2px 5px;
+}
+
+.content .form-container .form-content_middle .form-table table tr td ul {
+    padding-left: 50px;
+}
+
+.content .form-container .form-content_middle .form-table table tr td:nth-child(2) {
+    min-width: 100px;
+    text-align: center;
+}
+
+.content .form-container .form-content_middle .form-table table tr td:nth-child(3) {
+    min-width: 60px;
+    text-align: center;
+}
+
+.content .form-container .form-content_middle .form-conclude p {
+    padding: 30px 0px;
+}
+
+.content .form-container .form-content_middle .form-conclude ul li {
+    list-style: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #000000;
+}
+
+.content .form-container .form-content_middle .form-conclude .times {
+    padding: 10px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.content .form-container .form-content_middle .form-conclude .times input {
+    width: 30px;
+}
+
+.content .form-container .form-content_footer {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FF2C2C;
+}
+
+.content .form-container .form-content_footer ul li {
+    list-style: none;
+}
+
+.content .form-container .form-control {
+    padding-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.content .form-container .form-control a:first-child {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FC0000;
+    border: 1px solid #FC0000;
+    padding: 10px 20px;
+    border-radius: 8px 8px 0px 8px;
+}
+
+.content .form-container .form-control a:last-child {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    border: 1px solid #171A88;
+    background: #171A88;
+    padding: 10px 20px;
+    border-radius: 8px 8px 8px 0px;
+}
+
+.content .form-container .form-control button {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    border: 1px solid #171A88;
+    background: #171A88;
+    padding: 10px 20px;
+    border-radius: 8px 8px 8px 0px;
+}
+
+.content .form-container .form-vaccination-consent {
+    font-family: none;
+    background: #fff;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border: 2px solid #51d6ff;
+    border-right: 5px double #51d6ff;
+    border-left: 5px double #51d6ff;
+}
+
+.content .form-container .form-vaccination-consent h3 {
+    text-align: center;
+    padding: 0px 0px 40px;
+    font-weight: 700;
+}
+
+.content .form-container .form-vaccination-consent ul li {
+    list-style: none;
+    font-weight: 400;
+    text-indent: 30px;
+}
+
+.content .form-container .form-vaccination-consent ul li.flex-between {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.content .form-container .form-vaccination-consent ul li.flex-between p {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+
+.content .form-container .form-vaccination-consent ul li:last-child {
+    text-align: right;
+}
+
+.content .form-container .form-vaccination-consent ul li:last-child input {
+    width: 50px;
+}
+
+.content .form-container .form-finished {
+    padding: 80px 30px;
+}
+
+.content .form-container .form-finished h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #000000;
+    text-align: center;
+}
+
+.content .form-container .form-finished h3 span {
+    color: #FF3030;
+}
+
+.content .form-container .form-finished p {
+    padding: 25px 0px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #000000;
+}
+
+.content .form-container .form-finished table {
+    font-weight: 600;
+}
+
+.content .form-container .form-finished table tr td {
+    width: 33%;
+    padding: 5px 10px;
+}
+
+.pupup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #333;
+    text-align: center;
+    width: 30%;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    padding: 60px 30px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.pupup p.pupup-line_1 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.pupup .pupup-otp {
+    margin: 40px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pupup .pupup-otp input {
+    width: 30px;
+    height: 35px;
+    background: #FFFFFF;
+    border-bottom: 2px solid #FC0000;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pupup .pupup-line_2 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+}
+
+.pupup .pupup-line_3 {
+    padding: 20px 0px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+}
+
+.pupup .pupup-control {
+    padding-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.pupup .pupup-control a:first-child {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 8px 8px 8px 0px;
+    background: #E3E3E3;
+}
+
+.pupup .pupup-control a:last-child {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px 8px 8px 0px;
+    background: #171A88;
+}
+
+.toggle-pupup {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */

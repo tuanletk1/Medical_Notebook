@@ -15,7 +15,7 @@ function MedicalCity() {
     <Router>
        
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <Menubar />
         
         <Switch>

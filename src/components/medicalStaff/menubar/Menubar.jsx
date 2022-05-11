@@ -13,17 +13,13 @@ export default function Menubar() {
                         {/* <img src={logo} alt="" /> */}
                         <h2>MEDICAL NOTEBOOK</h2>
                     </li>
-                    <Link to='/HomeStaff' className='link'>
+                    <Link to='/' className='link'>
                         <li class="nav__listitem">Trang chủ</li>
                     </Link>
-                    <li class="nav__listitem">Thông tin cá nhân
-                        <ul class="nav__listitemdrop">
-                            <Link to='/InfoAccountStaff' className='link'>
-                                <li><a href="#">Thông tin cá nhân</a></li>
-                            </Link>
-                            <li>Mật khẩu</li>
-                        </ul>
-                    </li>
+                    
+                    <Link to='/InfoAccountStaff' className='link'>
+                        <li class="nav__listitem">Thông tin cá nhân</li>
+                    </Link>
                     <li class="nav__listitem">Đăng ký tiêm chủng
                         <ul class="nav__listitemdrop">
                             <Link to='/registervaccine' className='link'>
@@ -32,7 +28,7 @@ export default function Menubar() {
                             <Link to='/listAfterVac' className='link'>
                                 <li><a href="#">Danh sách sau tiêm chủng</a></li>
                             </Link>
-                            
+
                         </ul>
                     </li>
                     <li class="nav__listitem">Quản lý vắc-xin
@@ -45,16 +41,18 @@ export default function Menubar() {
                             </Link>
                         </ul>
                     </li>
-                    <li class="nav__listitem">Sức khoẻ sau tiêm</li>
+                    <Link to='/ListHealthAfter' className='link'>
+                        <li class="nav__listitem">Sức khoẻ sau tiêm</li>
+                    </Link>
                     <li class="nav__listitem">Đăng xuất</li>
 
                 </ul>
             </nav>
             <div className="profile_mini">
                 <h3>Bệnh Viện Hoàn Mỹ</h3>
-                
-                    <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
-                
+
+                <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
+
             </div>
         </div>
     )

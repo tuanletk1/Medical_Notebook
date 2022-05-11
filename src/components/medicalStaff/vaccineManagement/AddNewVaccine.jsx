@@ -3,7 +3,7 @@ import './addNewVaccine.css'
 export default function AddNewVaccine() {
   return (
     <div className='addNewVacc'>
-      <main class="container">
+      <main class="containerVac">
         <h2>Nhập thêm Vắc Xin</h2>
 
         <div class="row">
