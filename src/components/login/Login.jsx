@@ -3,7 +3,7 @@ import './login.css'
 
 export default function Login() {
     return (
-        <div class="container">
+        <div class="containerLogin">
             <div class="col-1">
                 <img src="./logo_medical.png" alt="" width="150px" class="icone"/>
                     <h1>Medical Notebook</h1>

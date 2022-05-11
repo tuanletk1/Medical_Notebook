@@ -10,6 +10,7 @@ import NewUser from './page/newUser/NewUser'
 import PersonalInfo from './page/personalInfo/PersonalInfo'
 import './MedicalCity.css'
 import StaffList from './page/staffList/StaffList';
+import StaffProfile from './page/staff/StaffProfile';
 function MedicalCity() {
   return (
     <Router>
@@ -22,22 +23,27 @@ function MedicalCity() {
           <Route exact path='/'>
             <Home />
           </Route>
+          
           <Route path='/user'>
             <UserList />
           </Route>
           <Route path='/user:userId'>
             <User />
           </Route>
+          
           <Route path='/newUser'>
             <NewUser />
           </Route>
           <Route path='/personalInfo'>
             <PersonalInfo />
           </Route>
+
           <Route path='/staff'>
             <StaffList />
           </Route>
-          
+          <Route path='/staff:staffId'>
+            <StaffProfile />
+          </Route>
         </Switch>
       </div>
     </Router>

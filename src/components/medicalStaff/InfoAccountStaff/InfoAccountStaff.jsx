@@ -45,7 +45,7 @@ export default function InfoAccountStaff() {
             </div>
           </div>
           <div className="userUpdate">
-            <span className="userUpdateTitle">Sửa</span>
+            <span className="userUpdateTitle">Chỉnh Sửa</span>
             <form className='userUpdateForm'>
               <div className="userUpdateLeft">
                 <div className="userUpdateItem">

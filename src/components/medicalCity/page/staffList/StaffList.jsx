@@ -62,7 +62,7 @@ export default function StaffList() {
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={"/users/" + params.row.id}>
+                        <Link to={"/staffs/" + params.row.id}>
                             <button className="userListEdit">Xem</button>
                         </Link>
                         <DeleteIcon className="userListDelete" onClick={() => handleDelete(params.row.id)} />

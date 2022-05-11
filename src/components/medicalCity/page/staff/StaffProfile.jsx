@@ -5,9 +5,9 @@ import PublishIcon from '@mui/icons-material/Publish';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { Link } from "react-router-dom";
 import face from '../../../../assets/images/face.jpg'
-import './user.css'
+import './staffProfile.css'
 
-export default function User() {
+export default function StaffProfile() {
   return (
     <div className='user'>
         <div className="userTitleContainer">
@@ -21,8 +21,8 @@ export default function User() {
             <div className="userShowTop">
               <img src={face} alt="" className='userShowImg' />
               <div className="userShowTopTitle"> 
-                <span className="userShowUsername">Tuanle123</span>
-                <span className="userShowUserTitle">Người dùng</span>
+                <span className="userShowUsername">PhamCong</span>
+                <span className="userShowUserTitle">Nhân viên y tế</span>
               </div>
             </div>
             <div className="userShowbutton">
