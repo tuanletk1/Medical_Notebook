@@ -23,7 +23,7 @@ export default function Login() {
                         <div class="inner-form">
                             <div class="clm-1">
                                 <h4>Tên đăng nhập</h4>
-                                <input type="text" placeholder="username" required/>
+                                <input type="text" placeholder="Username" required/>
                                     <h4>Mật khẩu</h4>
                                     <input type="password" placeholder="Email" required/>
                                     </div>
