@@ -11,6 +11,9 @@ import PersonalInfo from './page/personalInfo/PersonalInfo'
 import './MedicalCity.css'
 import StaffList from './page/staffList/StaffList';
 import StaffProfile from './page/staff/StaffProfile';
+import Backup from './dataManagement/Backup';
+
+
 function MedicalCity() {
   return (
     <Router>
@@ -44,6 +47,10 @@ function MedicalCity() {
           <Route path='/staff:staffId'>
             <StaffProfile />
           </Route>
+          <Route path='/backup'>
+            <Backup />
+          </Route>
+          
         </Switch>
       </div>
     </Router>

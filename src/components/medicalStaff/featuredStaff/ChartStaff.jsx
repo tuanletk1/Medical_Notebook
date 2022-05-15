@@ -6,25 +6,25 @@ export default function ChartStaff() {
         
 const data = [
     {
-      name: '24/3',
+      name: 'January',
       "Active User": 4000,
       pv: 2400,
       amt: 2400,
     },
     {
-      name: '25/3',
+      name: 'February',
       "Active User" : 3000,
       pv: 1398,
       amt: 2210,
     },
     {
-      name: '26/3',
+      name: 'February',
       "Active User": 2000,
       pv: 9800,
       amt: 2290,
     },
     {
-      name: '27/3',
+      name: 'April',
       "Active User": 2780,
       pv: 3908,
       amt: 2000,
