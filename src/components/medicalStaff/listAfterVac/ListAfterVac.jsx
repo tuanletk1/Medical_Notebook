@@ -63,7 +63,7 @@ export default function ListAfterVac() {
                                     <td className='tdListRegisterVac'>{data.RegisterSesion}</td>
                                     <td className='tdListRegisterVac'>
                                        
-                                        <Link to='./editvaccine'>
+                                        <Link to='./UserRegisterForm'>
                                             <BallotIcon className="vaccineListEdit" />
                                         </Link>
 

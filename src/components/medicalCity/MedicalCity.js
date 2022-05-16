@@ -1,6 +1,5 @@
 import React from 'react';
 import Menubar from './menubar/Menubar'
-import Header from './header/Header';
 import Home from './page/home/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserList from './page/userList/UserList';

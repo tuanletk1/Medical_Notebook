@@ -1,7 +1,7 @@
 import React from 'react'
 import './menubarAdmin.css';
 import { Link } from 'react-router-dom'
-// import UserList from './../page/userList/'
+import logo from '../../../assets/images/MedicalNotebook.png';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function Menubar() {
@@ -11,8 +11,8 @@ export default function Menubar() {
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__listlogo">
-                        
-                        <h2>MEDICAL NOTEBOOK</h2>
+                        <img src={logo} alt="" />
+                        {/* <h2>MEDICAL NOTEBOOK</h2> */}
                     </li>
                     <Link to='/' className='link'>
                         <li class="nav__listitem">Trang chủ</li>
