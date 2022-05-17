@@ -6,7 +6,7 @@ export default function AddNewVaccine() {
             <main class="container">
                 <h2>Chỉnh sửa thông tin Vắc xin</h2>
 
-                <div class="row">
+                <div class="rowEditVac">
                     <div class="inputbox">
                         <input type="text" id="name" name="" required />
                         <label for="name">Loại Vắc Xin</label>
@@ -16,7 +16,7 @@ export default function AddNewVaccine() {
                         <label for="name">Số lượng</label>
                     </div>
                 </div>
-                <div class="row">
+                <div class="rowEditVac">
                     <div class="inputbox">
                         <input type="date" id="name" name="" required className='dateinput' />
                         <label for="name">Ngày nhập</label>
@@ -30,12 +30,12 @@ export default function AddNewVaccine() {
                         <label for="name">Ngày hết hạn</label>
                     </div>
                 </div>
-                <div class="row">     
+                <div class="rowEditVac">     
                    <textarea name="" id="" cols="300" rows="10">
                        Mô tả thêm
                    </textarea>
                 </div>
-                <div class="row">
+                <div class="rowEditVac">
                     <button className='addvacc' type='submit'>Cập nhật</button>
                 </div>
 

@@ -1,18 +1,22 @@
 import React from 'react'
 import './login.css'
+import Home from './../medicalUser/pages/Home'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     return (
         <div class="containerLogin">
-            <div class="col-1">
+            <div class="coll-1">
                 <img src="./logo_medical.png" alt="" width="150px" class="icone"/>
                     <h1>Medical Notebook</h1>
+                    <Link to={"/"}>
                     <button type="submit" class="first-btn">Trang chủ</button>
+                    </Link>
             </div>
-            <div class="col-2">
+            <div class="coll-2">
                 <div class="form-box">
                     <div class="btn-box">
-                        <div id="btn"></div>
+                        <div id="button"></div>
                         <button type="submit" class="button" id="btn-1">Login</button>
                         <button type="submit" class="button"><a id="btn-2" href="./register.html">Register</a></button>
                     </div>
@@ -33,7 +37,7 @@ export default function Login() {
                                     </span>
                                     <span class="forgetpass" ><a href="">Quên mật khẩu?</a></span>
                             </div>
-                            <button type="submit" class="end-btn">Đăng nhập</button>
+                            <button type="submit" class="end-button">Đăng nhập</button>
                     </form>
                 </div>
             </div>

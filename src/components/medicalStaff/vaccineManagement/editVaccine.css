@@ -20,10 +20,11 @@
 .title{
     padding: 10x;
 }
-.row{
+.rowEditVac{
     display: flex;
     gap:40px;
 }
+
 .inputbox{
     position: relative;
     display: flex;
