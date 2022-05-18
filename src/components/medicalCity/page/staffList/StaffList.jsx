@@ -56,6 +56,11 @@ export default function StaffList() {
             width: 120,
         },
         {
+            field: 'adress',
+            headerName: 'Địa chỉ',
+            width: 350,
+          },
+        {
             field: 'action',
             headerName: 'Thao tác',
             width: 120,

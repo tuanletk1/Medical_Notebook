@@ -1,7 +1,7 @@
 import React from 'react'
 
 export  const userRows = [
-    { id: 1, fullname: 'Doan Ba Anh', cccd_cmnd: '123456789111', age: 35, sex: 'nam', birthDay: '23/09/2000', phone: '0980332323' },
+    { id: 1, fullname: 'Doan Ba Anh', cccd_cmnd: '123456789111', age: 35, sex: 'nam', birthDay: '23/09/2000', phone: '0980332323', adress:'60 lê thị tính, Quận Thanh Khê, Đà Nẵng' },
     { id: 2, fullname: 'Mai Nhu Van', cccd_cmnd: '123456789111', age: 42, sex: 'nam', birthDay: '12/02/2000', phone: "09111111" },
     { id: 3, fullname: 'Nguyen Van Linh', cccd_cmnd: '123456789111', age: 45,sex: 'nữ' },
     { id: 4, fullname: 'Nguyen Van Linh', cccd_cmnd: '123456789111', age: 16, sex: 'nữ' },
