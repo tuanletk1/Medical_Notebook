@@ -14,7 +14,7 @@ class Ward extends Model
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'district_id',
         'name',
     ];
@@ -24,5 +24,5 @@ class Ward extends Model
      *
      * @var string
      */
-    protected string $table = 'wards';
+    protected $table = 'wards';
 }

@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class Role extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.

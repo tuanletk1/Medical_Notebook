@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
-class District extends Seeder
+class DistrictSeeder extends Seeder
 {
     /**
      * Run the database seeds.

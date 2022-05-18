@@ -14,7 +14,7 @@ class MedicalHistory extends Model
      *
      * @var array<int, string>
      */
-    protected array $fillable = [
+    protected $fillable = [
         'user_id',
         'symptom',
     ];
@@ -24,5 +24,5 @@ class MedicalHistory extends Model
      *
      * @var string
      */
-    protected string $table = 'medical_histories';
+    protected $table = 'medical_histories';
 }
