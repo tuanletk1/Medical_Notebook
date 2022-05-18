@@ -50,7 +50,7 @@ export default function Menubar() {
                 </ul>
             </nav>
             <div className="profile_mini">
-                <h3>Bệnh Viện Hoàn Mỹ</h3>
+                <h5>Bệnh Viện Hoàn Mỹ</h5>
 
                 <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
 

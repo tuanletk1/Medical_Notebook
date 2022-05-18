@@ -15,7 +15,7 @@ const HeaderStep = () => {
           <Link to={"/Inject"}>
             <span>ĐĂNG KÝ TIÊM CHỦNG</span>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/HealthAfterInjection"}>
             <span>HỒ SƠ SỨC KHOẺ</span>
           </Link>
         </ul>

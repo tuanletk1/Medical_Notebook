@@ -1,6 +1,5 @@
 import React from 'react';
 import Menubar from './menubar/Menubar'
-import Header from './header/Header';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import './MedicalStaff.css'

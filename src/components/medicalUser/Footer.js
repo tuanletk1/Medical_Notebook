@@ -29,7 +29,7 @@ const Footer = () => {
               <div className="mid__about">
                 <div className="mid__logo">
                   <a href="./index.html">
-                    <img src="./images/Medical Notebook.png" alt />
+                   
                   </a>
                 </div>
                 <div className="mid__list">
@@ -37,7 +37,7 @@ const Footer = () => {
                     <li>
                       <i className="fa fa-phone gradient" />
                       <span>
-                        1900 6789
+                        Hotline
                         <br />
                         +84 368053223
                       </span>
@@ -46,7 +46,7 @@ const Footer = () => {
                       <i className="fa fa-envelope gradient" />
                       <span>
                         notebookmedical@gmail.com <br />
-                        18hcong@gmail.com
+                        
                       </span>
                     </li>
                     <li>
@@ -119,12 +119,6 @@ const Footer = () => {
                 <div className="mid__list">
                   <ul>
                     <li>
-                      <a href>FAQ</a>
-                    </li>
-                    <li>
-                      <a href>Danh Mục Đầu Tư</a>
-                    </li>
-                    <li>
                       <a href>Chính Sách Bảo Mật</a>
                     </li>
                     <li>
@@ -132,6 +126,12 @@ const Footer = () => {
                     </li>
                     <li>
                       <a href>Hỗ Trợ</a>
+                    </li>
+                    <li>
+                      <a href>notebookmedical@gmail.com</a>
+                    </li>
+                    <li>
+                      <a href>Hotline: 09042220909</a>
                     </li>
                   </ul>
                 </div>
