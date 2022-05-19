@@ -39,4 +39,52 @@ class User extends Authenticatable
      * @var string
      */
     protected $table = 'users';
+
+    /**
+     * Get img_cmnd_cccd_truoc attribute
+     *
+     * @param string $value Value
+     *
+     * @return string
+     */
+    public function getImgCmndCccdTruocAttribute($value)
+    {
+        if ($value) {
+            return env('APP_URL') . '/' . $value;
+        }
+
+        return null;
+    }
+
+    /**
+     * Get img_cmnd_cccd_sau attribute
+     *
+     * @param string $value Value
+     *
+     * @return string
+     */
+    public function getImgCmndCccdSauAttribute($value)
+    {
+        if ($value) {
+            return env('APP_URL') . '/' . $value;
+        }
+
+        return null;
+    }
+
+    /**
+     * Get img_signature attribute
+     *
+     * @param string $value Value
+     *
+     * @return string
+     */
+    public function getImgSignatureAttribute($value)
+    {
+        if ($value) {
+            return env('APP_URL') . '/' . $value;
+        }
+
+        return null;
+    }
 }
