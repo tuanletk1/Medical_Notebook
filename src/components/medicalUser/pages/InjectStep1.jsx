@@ -654,7 +654,7 @@ const Inject = () => {
                               />{" "}
                               Hủy bỏ{" "}
                             </button>
-                            <Link to={"/Inject-step2/"}>
+                            <Link to={"/Inject-step2"}>
                               <button
                                 _ngcontent-mjb-c11
                                 className="btn-primary btn rounded radius20 p-2 wbtn"

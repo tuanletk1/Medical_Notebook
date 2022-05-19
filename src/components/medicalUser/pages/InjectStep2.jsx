@@ -566,7 +566,7 @@ const InjectStep2 = () => {
                                         </div>
                                     </div>
                                     <div _ngcontent-mjb-c11 className="col-12 text-center">
-                                                <Link to={"/Inject/"}>
+                                                <Link to={"/Inject"}>
                                                     <button
                                                         _ngcontent-mjb-c11
                                                         className="btn-secondary btn rounded radius20 p-2 mr-3 wbtn"
@@ -579,7 +579,7 @@ const InjectStep2 = () => {
                                                         Quay lại{" "}
                                                     </button>
                                                 </Link>
-                                                <Link to={"/Inject-step3/"}>
+                                                <Link to={"/Inject-step3"}>
                                                 <button
                                                     _ngcontent-mjb-c11
                                                     className="btn-primary btn rounded radius20 p-2 wbtn"
