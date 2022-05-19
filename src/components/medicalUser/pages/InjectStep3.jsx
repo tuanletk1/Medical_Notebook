@@ -1,10 +1,22 @@
+import React from "react";
 import HeaderStep from "../HeadStep";
+import OpenOTP from '../../OTP/index';
 import { Link } from "react-router-dom";
 
 const InjectStep3 = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpenOTP = () => {
+        setOpen(true);
+    }
+    console.log(open)
     return (
         <>
             <HeaderStep />
+            <OpenOTP
+                isOpen={open}
+                setOpen={setOpen}
+            />
             <main _ngcontent-mjb-c8 id="main">
                 <section
                     _ngcontent-mjb-c8
@@ -188,12 +200,12 @@ const InjectStep3 = () => {
                                                         Quay lại{" "}
                                                     </button>
                                                 </Link>
-                                                <Link to={"/Inject-step4"}>
+                                                <Link>
                                                     <button
                                                         _ngcontent-mjb-c11
                                                         className="btn-primary btn rounded radius20 p-2 wbtn"
                                                         type="button"
-
+                                                        onClick={handleOpenOTP}
                                                     >
                                                         {" "}
                                                         Xác nhận{" "}

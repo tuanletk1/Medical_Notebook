@@ -426,8 +426,8 @@ input {
     -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     padding: 60px 30px;
-    visibility: hidden;
-    opacity: 0;
+    /* visibility: hidden;
+    opacity: 0; */
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
@@ -506,6 +506,7 @@ input {
     padding: 10px 20px;
     border-radius: 8px 8px 8px 0px;
     background: #E3E3E3;
+    cursor: pointer;
 }
 
 .pupup .pupup-control a:last-child {
@@ -516,6 +517,7 @@ input {
     padding: 10px 20px;
     border-radius: 8px 8px 8px 0px;
     background: #171A88;
+    cursor: pointer;
 }
 
 .toggle-pupup {
