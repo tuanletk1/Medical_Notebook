@@ -29,10 +29,8 @@ if (!function_exists('saveFile')) {
     function saveFile(UploadedFile $file)
     {
         $filename = Str::uuid() .'.' . $file->getClientOriginalExtension();
-        $savePath = '/images/' . $filename;
+        $savePath = '/images';
 
-        Storage::putFile(public_path($savePath), $file);
-
-        return $savePath;
+        return Storage::putFile($savePath, $file);
     }
 }
