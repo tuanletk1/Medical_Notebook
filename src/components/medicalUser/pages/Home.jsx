@@ -932,9 +932,7 @@ const Home = () => {
       </section>
       {/* FOOTER */}
       <Footer />
-      <a href="./" className="backtoTop cd-top text-replace js-cd-top">
-        <i className="fa fa-arrow-up" />
-      </a>
+      <a href="./" class="backtoTop cd-top text-replace js-cd-top"><i class="fa fa-arrow-up"></i></a>
     </>
   );
 };
