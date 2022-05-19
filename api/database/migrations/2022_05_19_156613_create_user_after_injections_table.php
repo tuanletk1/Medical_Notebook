@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('register_injections', function (Blueprint $table) {
+        Schema::create('user_after_injections', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('the_second_time')->nullable();
-            $table->string('name', 255)->nullable();
-            $table->string('code', 255)->nullable();
+            $table->string('name', 255);
             $table->timestamp('date_of_birth')->nullable();
             $table->string('sex', 20)->nullable();
             $table->string('phone_number', 20)->nullable();
@@ -30,8 +28,6 @@ return new class extends Migration
             $table->string('city', 255)->nullable();
             $table->string('district', 255)->nullable();
             $table->string('ward', 255)->nullable();
-            $table->timestamp('date_injection')->nullable();
-            $table->string('time_of_day', 50)->nullable();
             $table->timestamps();
         });
     }
@@ -43,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('register_injections');
+        Schema::dropIfExists('user_after_injections');
     }
 };

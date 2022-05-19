@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pre_histories', function (Blueprint $table) {
+        Schema::create('symptom_after_injections', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('register_injection_id');
-            $table->foreign('register_injection_id')->references('id')->on('register_injections');
+            $table->unsignedBigInteger('user_after_injection_id');
+            $table->foreign('user_after_injection_id')->references('id')->on('user_after_injections');
             $table->string('symptom_1', 255)->nullable();
             $table->string('name_1', 255)->nullable();
             $table->smallInteger('status_1')->nullable();
@@ -53,6 +53,27 @@ return new class extends Migration
             $table->string('symptom_12', 255)->nullable();
             $table->string('name_12', 255)->nullable();
             $table->smallInteger('status_12')->nullable();
+            $table->string('symptom_13', 255)->nullable();
+            $table->string('name_13', 255)->nullable();
+            $table->smallInteger('status_13')->nullable();
+            $table->string('symptom_14', 255)->nullable();
+            $table->string('name_14', 255)->nullable();
+            $table->smallInteger('status_14')->nullable();
+            $table->string('symptom_15', 255)->nullable();
+            $table->string('name_15', 255)->nullable();
+            $table->smallInteger('status_15')->nullable();
+            $table->string('symptom_16', 255)->nullable();
+            $table->string('name_16', 255)->nullable();
+            $table->smallInteger('status_16')->nullable();
+            $table->string('symptom_17', 255)->nullable();
+            $table->string('name_17', 255)->nullable();
+            $table->smallInteger('status_17')->nullable();
+            $table->string('symptom_18', 255)->nullable();
+            $table->string('name_18', 255)->nullable();
+            $table->smallInteger('status_18')->nullable();
+            $table->string('symptom_19', 255)->nullable();
+            $table->string('name_19', 255)->nullable();
+            $table->smallInteger('status_19')->nullable();
             $table->timestamps();
         });
     }
@@ -64,6 +85,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pre_histories');
+        Schema::dropIfExists('symptom_after_injections');
     }
 };

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AfterInjectionController;
 use App\Http\Controllers\Api\AuthenticateController;
 use App\Http\Controllers\Api\RegisterJinjectionController;
 use App\Http\Controllers\Api\UserController;
@@ -28,6 +29,10 @@ Route::group([], function () {
     Route::post(
         '/register-injections',
         [RegisterJinjectionController::class, 'register']
+    );
+    Route::post(
+        '/after-injections',
+        [AfterInjectionController::class, 'registerSymptom']
     );
 });
 
