@@ -51,7 +51,7 @@ export default function Menubar() {
                 </ul>
             </nav>
             <div className="profile_mini">
-                <h3>Admin Tuan</h3>
+                <h5>Admin Tuan</h5>
 
                 <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
 
