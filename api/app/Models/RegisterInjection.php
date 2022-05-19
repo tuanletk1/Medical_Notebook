@@ -16,6 +16,7 @@ class RegisterInjection extends Model
      */
     protected $fillable = [
         'the_second_time',
+        'code',
         'name',
         'date_of_birth',
         'sex',

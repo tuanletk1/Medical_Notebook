@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PreHistories;
 use App\Models\RegisterInjection;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RegisterJinjectionController extends Controller
@@ -76,6 +77,8 @@ class RegisterJinjectionController extends Controller
         ]);
 
         $register = RegisterInjection::create($dataRegister);
+        $register->code = Carbon::now()->format('dmY') . '-' . $register->id;
+        $register->save();
         $dataPreHistories['register_injection_id'] = $register->id;
 
         PreHistories::create($dataPreHistories);

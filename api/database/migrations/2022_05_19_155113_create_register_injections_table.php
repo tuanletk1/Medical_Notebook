@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->smallInteger('the_second_time');
             $table->string('name', 255);
+            $table->string('code', 255)->nullable();
             $table->timestamp('date_of_birth')->nullable();
             $table->string('sex', 20);
             $table->string('phone_number', 20);
