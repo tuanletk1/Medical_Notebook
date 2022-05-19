@@ -18,7 +18,7 @@ class AuthenticateController extends Controller
     {
         $users = User::where([
             'phone' => $request->get('phone')
-        ])->find();
+        ])->first();
 
         if (empty($users)) {
             return response()->error('Sai thông tin đăng nhập!');
