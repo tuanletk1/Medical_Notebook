@@ -21,8 +21,8 @@ Route::group([], function () {
         'users' => UserController::class,
     ]);
     Route::post(
-        'users/login',
-        [AuthenticateController::class => 'login']
+        '/users/login',
+        [AuthenticateController::class, 'login']
     );
 });
 
