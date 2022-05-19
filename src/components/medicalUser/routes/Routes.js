@@ -9,7 +9,7 @@ import InjectStep2 from "../pages/InjectStep2";
 import InjectStep3 from "../pages/InjectStep3";
 import InjectStep4 from "../pages/InjectStep4";
 import HealthAfterInjection from "../pages/HealthAfterInjection";
-import Profile from "../../../Profile/Profile";
+import Profile from "../pages/ProfileUser";
 
 const Routes = () => {
   return (
