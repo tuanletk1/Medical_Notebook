@@ -21,7 +21,8 @@ class Vaccination extends Model
         'date_of_manufacture',
         'age_use',
         'quantity',
-        'input_date'
+        'input_date',
+        'note'
     ];
 
     /**
@@ -32,7 +33,9 @@ class Vaccination extends Model
     protected $casts = [
         'date_of_manufacture' => 'date:d-m-Y',
         'age_use' => 'date:d-m-Y',
-        'input_date' => 'date:d-m-Y'
+        'input_date' => 'date:d-m-Y',
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'date:d-m-Y'
     ];
 
     /**
