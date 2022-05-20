@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('vaccinations', function (Blueprint $table) {
-            $table->string('origin', 255)->nullable()->change();
-            $table->string('lot_number', 255)->nullable()->change();
+            $table->dropColumn('origin');
+            $table->dropColumn('lot_number');
         });
     }
 
