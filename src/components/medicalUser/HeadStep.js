@@ -9,7 +9,7 @@ const HeaderStep = () => {
           <Link to={"/"}>
             <span>TRANG CHỦ</span>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/ProfileUser"}>
             <span>THÔNG TIN CÁ NHÂN</span>
           </Link>
           <Link to={"/Inject"}>

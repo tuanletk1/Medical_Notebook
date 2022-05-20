@@ -8,7 +8,16 @@ export default function AddNewVaccine() {
 
         <div class="row">
             <div class="inputbox">
-                <input type="text" id="name" name="" required/> 
+            <select
+                                name=""
+                                id=""
+                                className="form-control ng-untouched ng-pristine ng-valid"
+                              >
+                                <option value="choose" >AstraZeneca</option>
+                                <option value="choose" >Vero Cell</option>
+                                <option value="choose" >Pfizer</option>
+                                <option value="choose" >Spikevax </option>
+                              </select>
                 <label for="name">Loại Vắc Xin</label>
             </div>
             <div class="inputbox">

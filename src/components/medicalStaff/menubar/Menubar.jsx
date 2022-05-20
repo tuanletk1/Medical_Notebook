@@ -52,7 +52,7 @@ export default function Menubar() {
             <div className="profile_mini">
                 <h5>Bệnh Viện Hoàn Mỹ</h5>
 
-                <img src="https://taimienphi.vn/tmp/cf/aut/hinh-nen-vit-avatar-anh-vit-cute-ngoc-nghech-1.jpg" alt="" />
+                <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-default-avatar-png-image_5407175.jpg" alt="" />
 
             </div>
         </div>

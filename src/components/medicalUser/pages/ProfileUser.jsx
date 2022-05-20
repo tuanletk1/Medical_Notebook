@@ -1,134 +1,108 @@
-import React from "react";
+import React from 'react'
+import { PermIdentity, Phone, Email  } from '@material-ui/icons'
+import CakeIcon from '@mui/icons-material/Cake';
+import HomeIcon from '@mui/icons-material/Home';
+import PublishIcon from '@mui/icons-material/Publish';
+import { Link } from "react-router-dom";
+import HeaderStep from '../HeadStep';
 
-const Profile = () => {
+export default function ProfileUser() {
   return (
-    <div className="bg-[##eaf4ff42]">
-      <div className="px-[20%] py-[50px]">
-        <h3 className="text-blue-400 text-2xl font-bold border-b-2 mb-4  ">
-          THÔNG TIN CÁ NHÂN
-        </h3>
-        <div className="flex">
-          <div className="w-[50%]">
-            <form>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">
-                  Tên người dùng:{" "}
-                </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
+    
+    <div className='user'>
+       <HeaderStep />
+        <div className="userTitleContainer">
+            <h1 className="userTitle">Thông tin cá nhân</h1>
+        </div>
+        <div className="userContainer">
+          <div className="userShow">
+            <div className="userShowTop">
+              <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-default-avatar-png-image_5407175.jpg" alt="" className='userShowImg' />
+              <div className="userShowTopTitle"> 
+                <span className="userShowUsername">PhamCong</span>
+                <span className="userShowUserTitle">Người dùng</span>
               </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Mã số: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Ngày sinh: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">CMND/CCCD: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Email: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-            </form>
-          </div>
-          <div className="w-[50%] text-center">
-            <div className="w-[30%] m-auto border-[1px] text-center">
-              <img
-                src="https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png"
-                alt=""
-              />
-              <p>Thay đổi Avartar</p>
             </div>
-            <p>(Kích thước tốt nhất là cao 155px, rộng 147px)</p>
+            <div className="userShowbutton">
+              <span className="userShowTitle">Chi tiết tài khoản</span>
+              <div className="userShowInfo">
+                <PermIdentity className='userShowInfo'/>
+                <span className="userShowInfoTitle">Phạm Hoàng Công</span>
+              </div>
+              <div className="userShowInfo">
+                <CakeIcon className='userShowInfo'/>
+                <span className="userShowInfoTitle">23/09/2000</span>
+              </div>
+              <div className="userShowInfo">
+                <Phone className='userShowInfo'/>
+                <span className="userShowInfoTitle">0865558065</span>
+              </div>
+              <div className="userShowInfo">
+                <Email className='userShowInfo'/>
+                <span className="userShowInfoTitle">Tuanletk1@gmail.com</span>
+              </div>
+              <div className="userShowInfo">
+                <HomeIcon className='userShowInfo'/>
+                <span className="userShowInfoTitle">60 Lê Thị Tính, phường An Khê, quận Thanh Khê,TP Đà Nẵng</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <h3 className="text-blue-400 text-xl font-bold border-b-2 mb-4  ">
-          Địa chỉ hiện tại
-        </h3>
-        <div className="flex">
-          <div className="w-[50%]">
-            <form>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">
-                  Địa chỉ/Tổ/Thôn:{" "}
-                </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
+          <div className="userUpdate">
+            <span className="userUpdateTitle">Chỉnh Sửa</span>
+            <form className='userUpdateForm'>
+              <div className="userUpdateLeft">
+                <div className="userUpdateItem">
+                  <label>Tài khoản</label>
+                  <input type="text" placeholder='Tuanle123'className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Họ và tên</label>
+                  <input type="text" placeholder='Le Van Tuan'className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Ngày sinh</label>
+                  <input type="date" placeholder=''className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Số điện thoại</label>
+                  <input type="text" placeholder='+84'className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Email</label>
+                  <input type="text" placeholder=''className='userUpdateInput' />
+                </div>
+                
               </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Phường/Xã: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
+              <div className="userUpdateLeft">
+                <div className="userUpdateItem">
+                  <label>Địa chỉ/ Số nhà</label>
+                  <input type="text" placeholder=''className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Xã/Phường</label>
+                  <input type="text" placeholder=''className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Quận/Huyện</label>
+                  <input type="text" placeholder=''className='userUpdateInput' />
+                </div>
+                <div className="userUpdateItem">
+                  <label>Tỉnh/Thành phố</label>
+                  <input type="text" placeholder=''className='userUpdateInput' />
+                </div>
+               
               </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Quận/Huyện: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">
-                  Tỉnh/Thành phố:{" "}
-                </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Quốc gia: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
-              </div>
-              <div className="flex mb-2 ">
-                <label className="min-w-[30%] text-right">Điện thoại: </label>
-                <input
-                  className="border-[1px] border-solid border-blue-200	ml-2"
-                  style={{ flex: 1 }}
-                  type="text"
-                />
+              <div className="userUpdateRignt">
+                <div className="userUpdateUpload">
+                  <img className='userUpdateImg' src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-default-avatar-png-image_5407175.jpg" alt="User image" />
+                  <label htmlFor="file"><PublishIcon className='userUpdateIcon'/></label>
+                  <input type="file" id="file" style={{display:"none"}}/>
+                </div>
+                <button className="userUpdateButton">Cập nhật</button>
               </div>
             </form>
           </div>
         </div>
-      </div>
     </div>
-  );
-};
-
-export default Profile;
+  )
+}

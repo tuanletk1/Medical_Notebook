@@ -6,8 +6,10 @@ import EditIcon from '@mui/icons-material/Edit';
 
 export default function ListVaccine() {
     const dummyData = [
-        { id: 1, VaccineName: "vero cell", Number: "111", DateAdd: "6/4/2022", ManufactureDate: "1/4/2022", ExpiryDate: "30/4/2022"},
-        { id: 1, VaccineName: "vero cell", Number: "111", DateAdd: "6/4/2022", ManufactureDate: "1/4/2022", ExpiryDate: "30/4/2022"},
+        { id: 1, VaccineName: "vero cell", Number: "111", DateAdd: "18/5/2022", ManufactureDate: "1/4/2022", ExpiryDate: "20/6/2022"},
+        { id: 2, VaccineName: "vero cell", Number: "111", DateAdd: "20/5/2022", ManufactureDate: "1/4/2022", ExpiryDate: "12/6/2022"},
+        { id: 3, VaccineName: "AstraZeneca", Number: "111", DateAdd: "20/5/2022", ManufactureDate: "1/4/2022", ExpiryDate: "19/6/2022"},
+        { id: 4, VaccineName: "Pfizer", Number: "111", DateAdd: "20/5/2022", ManufactureDate: "1/4/2022", ExpiryDate: "19/6/2022"},
     ]
     return (
         <div>
