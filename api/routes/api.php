@@ -35,7 +35,7 @@ Route::group([], function () {
         'vaccinations' => VaccinationController::class,
     ]);
     Route::apiResources([
-        'register-vaccinations' => RegisterJinjectionController::class,
+        'register-injections' => RegisterJinjectionController::class,
     ]);
 });
 
