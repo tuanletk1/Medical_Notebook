@@ -21,6 +21,7 @@ class Vaccination extends Model
         'date_of_manufacture',
         'age_use',
         'quantity',
+        'input_date'
     ];
 
     /**

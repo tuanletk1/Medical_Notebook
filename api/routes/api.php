@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AfterInjectionController;
 use App\Http\Controllers\Api\AuthenticateController;
 use App\Http\Controllers\Api\RegisterJinjectionController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\VaccinationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,5 +35,8 @@ Route::group([], function () {
         '/after-injections',
         [AfterInjectionController::class, 'registerSymptom']
     );
+    Route::apiResources([
+        'vaccinations' => VaccinationController::class,
+    ]);
 });
 

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('vaccinations', function (Blueprint $table) {
             $table->timestamp('input_date')->nullable();
+            $table->string('note', 255)->nullable();
         });
     }
 
