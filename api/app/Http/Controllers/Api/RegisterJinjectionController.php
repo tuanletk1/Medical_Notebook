@@ -94,7 +94,7 @@ class RegisterJinjectionController extends Controller
      */
     public function index()
     {
-        $registerVaccinations = RegisterInjection::load('preHistories')->all();
+        $registerVaccinations = RegisterInjection::with('preHistories')->all();
 
         return response()->success(null, $registerVaccinations);
     }
@@ -106,7 +106,7 @@ class RegisterJinjectionController extends Controller
      */
     public function show($id)
     {
-        $registerVaccination = RegisterInjection::load('preHistories')->find($id);
+        $registerVaccination = RegisterInjection::with('preHistories')->find($id);
 
         return response()->success(null, $registerVaccination);
     }
