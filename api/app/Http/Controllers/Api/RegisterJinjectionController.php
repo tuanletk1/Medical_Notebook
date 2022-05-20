@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PreHistories;
 use App\Models\RegisterInjection;
 use App\Models\User;
+use App\Models\Vaccination;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -13,11 +14,11 @@ class RegisterJinjectionController extends Controller
 {
 
     /**
-     * Login method
+     * Create register vaccinations method
      *
      * @return \Illuminate\Http\Response
      */
-    public function register(Request $request)
+    public function store(Request $request)
     {
         $dataRegister = $request->only([
             'the_second_time',
@@ -84,5 +85,29 @@ class RegisterJinjectionController extends Controller
         PreHistories::create($dataPreHistories);
 
         return response()->success(null, $register->load('preHistories'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $registerVaccinations = RegisterInjection::all();
+
+        return response()->success(null, $registerVaccinations);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $registerVaccination = RegisterInjection::find($id);
+
+        return response()->success(null, $registerVaccination);
     }
 }
