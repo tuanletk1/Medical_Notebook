@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Models\Vaccination;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -79,9 +78,9 @@ class VaccinationController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $vaccination = Vaccination::find($id);
 
-        return response()->success(null, $user);
+        return response()->success(null, $vaccination);
     }
 
     /**
@@ -93,11 +92,11 @@ class VaccinationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $this->getUserData($request);
+        $data = $this->getData($request);
 
-        $user = User::find($id)->fill($data)->save();
+        $vaccination = Vaccination::find($id)->fill($data)->save();
 
-        return response()->success(null, $user);
+        return response()->success(null, $vaccination);
     }
 
     /**
@@ -109,7 +108,7 @@ class VaccinationController extends Controller
      */
     public function destroy($id)
     {
-        User::delete($id);
+        Vaccination::delete($id);
 
         return response()->noContent();
     }
