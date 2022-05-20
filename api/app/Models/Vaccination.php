@@ -30,8 +30,9 @@ class Vaccination extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'date_of_manufacture' => 'datetime',
-        'age_use' => 'datetime',
+        'date_of_manufacture' => 'date:d-m-Y',
+        'age_use' => 'date:d-m-Y',
+        'input_date' => 'date:d-m-Y'
     ];
 
     /**
