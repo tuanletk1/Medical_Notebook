@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Vaccination;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class VaccinationController extends Controller
@@ -31,14 +32,7 @@ class VaccinationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only([
-            'name',
-            'quantity',
-            'input_date',
-            'date_of_manufacture',
-            'age_use',
-            'note'
-        ]);
+        $data = $this->getData($request);
 
         $vaccination = Vaccination::create($data);
 
@@ -52,35 +46,27 @@ class VaccinationController extends Controller
      *
      * @return array
      */
-    private function getUserData(Request $request)
+    private function getData(Request $request)
     {
         $data = $request->only([
-            'fullname',
-            'cmnd_cccd',
-            'district',
-            'ward',
-            'phone',
-            'role_id',
-            'gender',
-            'job',
-            'workplace',
-            'email',
+            'name',
+            'quantity',
+            'input_date',
+            'date_of_manufacture',
+            'age_use',
+            'note'
         ]);
 
-        if ($request->has('password')) {
-            $data['password'] = bcrypt($request->get('password'));
+        if ($request->has('input_date')) {
+            $data['input_date'] = Carbon::createFromFormat('d-m-Y', $data['input_date']);
         }
 
-        if ($request->hasFile('img_cmnd_cccd_truoc')) {
-            $data['img_cmnd_cccd_truoc'] = saveFile($request->file('img_cmnd_cccd_truoc'));
+        if ($request->has('date_of_manufacture')) {
+            $data['date_of_manufacture'] = Carbon::createFromFormat('d-m-Y', $data['date_of_manufacture']);
         }
 
-        if ($request->hasFile('img_cmnd_cccd_sau')) {
-            $data['img_cmnd_cccd_sau'] = saveFile($request->file('img_cmnd_cccd_sau'));
-        }
-
-        if ($request->hasFile('img_signature')) {
-            $data['img_signature'] = saveFile($request->file('img_signature'));
+        if ($request->has('age_use')) {
+            $data['age_use'] = Carbon::createFromFormat('d-m-Y', $data['age_use']);
         }
 
         return $data;
