@@ -19,7 +19,7 @@ class AfterInjectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function registerSymptom(Request $request)
+    public function store(Request $request)
     {
         $dataUser = $request->only([
             'name',
@@ -102,5 +102,29 @@ class AfterInjectionController extends Controller
         SymptomAfterInjection::create($dataSymptom);
 
         return response()->success(null, $user->load('symptomAfterInjections'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $registerVaccinations = UserAfterInjection::with('symptomAfterInjections')->get();
+
+        return response()->success(null, $registerVaccinations);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $registerVaccination = UserAfterInjection::with('symptomAfterInjections')->find($id);
+
+        return response()->success(null, $registerVaccination);
     }
 }
