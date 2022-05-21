@@ -19,7 +19,7 @@ class AfterInjectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function registerSymptom(Request $request)
+    public function store(Request $request)
     {
         $dataUser = $request->only([
             'name',

@@ -33,9 +33,8 @@ Route::group([], function () {
     Route::apiResources([
         'register-injections' => RegisterJinjectionController::class,
     ]);
-    Route::apiResources(
-        '/after-injections',
-        [AfterInjectionController::class, 'registerSymptom']
-    );
+    Route::apiResources([
+        '/after-injections' => AfterInjectionController::class
+    ]);
 });
 
