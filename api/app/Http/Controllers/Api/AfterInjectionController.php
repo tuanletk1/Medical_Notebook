@@ -36,6 +36,11 @@ class AfterInjectionController extends Controller
             'district',
             'ward',
         ]);
+
+        if ($request->has('date_of_birth')) {
+            $dataUser['date_of_birth'] = Carbon::createFromFormat('d-m-Y', $dataUser['date_of_birth']);
+        }
+
         $dataSymptom = $request->only([
             'symptom_1',
             'name_1',
@@ -128,6 +133,11 @@ class AfterInjectionController extends Controller
             'district',
             'ward',
         ]);
+
+        if ($request->has('date_of_birth')) {
+            $dataUser['date_of_birth'] = Carbon::createFromFormat('d-m-Y', $dataUser['date_of_birth']);
+        }
+
         $dataSymptom = $request->only([
             'symptom_1',
             'name_1',

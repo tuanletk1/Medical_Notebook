@@ -38,6 +38,15 @@ class RegisterJinjectionController extends Controller
             'date_injection',
             'time_of_day',
         ]);
+
+        if ($request->has('date_of_birth')) {
+            $dataRegister['date_of_birth'] = Carbon::createFromFormat('d-m-Y', $dataRegister['date_of_birth']);
+        }
+
+        if ($request->has('date_injection')) {
+            $dataRegister['date_injection'] = Carbon::createFromFormat('d-m-Y', $dataRegister['date_injection']);
+        }
+
         $dataPreHistories = $request->only([
             'symptom_1',
             'name_1',
@@ -114,6 +123,15 @@ class RegisterJinjectionController extends Controller
             'date_injection',
             'time_of_day',
         ]);
+
+        if ($request->has('date_of_birth')) {
+            $dataRegister['date_of_birth'] = Carbon::createFromFormat('d-m-Y', $dataRegister['date_of_birth']);
+        }
+
+        if ($request->has('date_injection')) {
+            $dataRegister['date_injection'] = Carbon::createFromFormat('d-m-Y', $dataRegister['date_injection']);
+        }
+
         $dataPreHistories = $request->only([
             'symptom_1',
             'name_1',

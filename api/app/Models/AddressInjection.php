@@ -53,7 +53,9 @@ class AddressInjection extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'date' => 'datetime',
+        'date' => 'date:d-m-Y',
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'date:d-m-Y',
     ];
 
     /**
