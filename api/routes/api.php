@@ -27,15 +27,15 @@ Route::group([], function () {
         '/users/login',
         [AuthenticateController::class, 'login']
     );
-    Route::post(
-        '/after-injections',
-        [AfterInjectionController::class, 'registerSymptom']
-    );
     Route::apiResources([
         'vaccinations' => VaccinationController::class,
     ]);
     Route::apiResources([
         'register-injections' => RegisterJinjectionController::class,
     ]);
+    Route::apiResources(
+        '/after-injections',
+        [AfterInjectionController::class, 'registerSymptom']
+    );
 });
 

@@ -103,4 +103,28 @@ class AfterInjectionController extends Controller
 
         return response()->success(null, $user->load('symptomAfterInjections'));
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $registerVaccinations = RegisterInjection::with('symptomAfterInjections')->get();
+
+        return response()->success(null, $registerVaccinations);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $registerVaccination = RegisterInjection::with('symptomAfterInjections')->find($id);
+
+        return response()->success(null, $registerVaccination);
+    }
 }
