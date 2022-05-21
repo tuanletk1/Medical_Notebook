@@ -188,14 +188,14 @@ class AfterInjectionController extends Controller
             'status_19',
         ]);
 
-        $user = UserAfterInjection::findOrFail($id);
+        $userAfterInjection = UserAfterInjection::findOrFail($id);
 
-        $symptomAfterInjections = $user->symptomAfterInjections;
+        $symptomAfterInjections = $userAfterInjection->symptomAfterInjections;
 
-        $user->fill($dataUser)->save();
+        $userAfterInjection->fill($dataUser)->save();
         $symptomAfterInjections->fill($dataSymptom)->save();
 
-        return response()->success(null, $user);
+        return response()->success(null, $userAfterInjection);
     }
 
     /**
@@ -205,9 +205,9 @@ class AfterInjectionController extends Controller
      */
     public function index()
     {
-        $registerVaccinations = UserAfterInjection::with('symptomAfterInjections')->get();
+        $userAfterInjections = UserAfterInjection::with('symptomAfterInjections')->get();
 
-        return response()->success(null, $registerVaccinations);
+        return response()->success(null, $userAfterInjections);
     }
 
     /**
@@ -217,8 +217,24 @@ class AfterInjectionController extends Controller
      */
     public function show($id)
     {
-        $registerVaccination = UserAfterInjection::with('symptomAfterInjections')->find($id);
+        $userAfterInjection = UserAfterInjection::with('symptomAfterInjections')->find($id);
 
-        return response()->success(null, $registerVaccination);
+        return response()->success(null, $userAfterInjection);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id Id of user need delete.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $userAfterInjection = UserAfterInjection::findOrFail($id);
+        $userAfterInjection->symptomAfterInjections->delete();
+        $userAfterInjection->delete();
+
+        return response()->noContent();
     }
 }
