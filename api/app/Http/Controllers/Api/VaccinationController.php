@@ -108,7 +108,7 @@ class VaccinationController extends Controller
      */
     public function destroy($id)
     {
-        Vaccination::delete($id);
+        Vaccination::findOrFail($id)->delete();
 
         return response()->noContent();
     }
