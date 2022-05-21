@@ -111,7 +111,7 @@ class AfterInjectionController extends Controller
      */
     public function index()
     {
-        $registerVaccinations = SymptomAfterInjection::with('symptomAfterInjections')->get();
+        $registerVaccinations = UserAfterInjection::with('symptomAfterInjections')->get();
 
         return response()->success(null, $registerVaccinations);
     }
@@ -123,7 +123,7 @@ class AfterInjectionController extends Controller
      */
     public function show($id)
     {
-        $registerVaccination = SymptomAfterInjection::with('symptomAfterInjections')->find($id);
+        $registerVaccination = UserAfterInjection::with('symptomAfterInjections')->find($id);
 
         return response()->success(null, $registerVaccination);
     }
