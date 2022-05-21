@@ -115,8 +115,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
+        User::findOrFail($id)->delete();
 
-        return response()->noContent();
+        return response()->success('Xoá thành công.', null);
     }
 }

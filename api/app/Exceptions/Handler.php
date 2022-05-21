@@ -47,4 +47,52 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    /**
+     * Report or log an exception.
+     *
+     * @param \Throwable $exception Throwable.
+     *
+     * @return void
+     *
+     * @throws \Exception Exception.
+     */
+    public function report(Throwable $exception)
+    {
+        parent::report($exception);
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param \Illuminate\Http\Request|mixed $request   Request.
+     * @param \Throwable                     $exception Throwable.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Throwable Throwable.
+     */
+    public function render($request, Throwable $exception)
+    {
+        return parent::render($request, $exception);
+    }
+
+    /**
+     * Prepare a JSON response for the given exception.
+     *
+     * @param \Illuminate\Http\Request|mixed $request Request.
+     * @param \Throwable                     $e       Throwable.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function prepareJsonResponse($request, Throwable $e)
+    {
+        $response = parent::prepareJsonResponse($request, $e);
+
+        return response()->error(
+            $response->getData(true)['message'] ?? 'Server Error',
+            [],
+            $response->getStatusCode()
+        );
+    }
 }
