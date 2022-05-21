@@ -35,6 +35,18 @@ class RegisterInjection extends Model
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'date_of_birth' => 'date:d-m-Y',
+        'date_injection' => 'date:d-m-Y',
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'date:d-m-Y',
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string

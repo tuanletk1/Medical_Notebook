@@ -22,6 +22,16 @@ class VaccOrderRegister extends Model
     ];
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'date:d-m-Y',
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string

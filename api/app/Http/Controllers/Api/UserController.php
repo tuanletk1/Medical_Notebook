@@ -101,7 +101,8 @@ class UserController extends Controller
     {
         $data = $this->getUserData($request);
 
-        $user = User::find($id)->fill($data)->save();
+        $user = User::findOrFail($id);
+        $user->fill($data)->save();
 
         return response()->success(null, $user);
     }

@@ -94,7 +94,8 @@ class VaccinationController extends Controller
     {
         $data = $this->getData($request);
 
-        $vaccination = Vaccination::find($id)->fill($data)->save();
+        $vaccination = Vaccination::findOrFail($id);
+        $vaccination->fill($data)->save();
 
         return response()->success(null, $vaccination);
     }
