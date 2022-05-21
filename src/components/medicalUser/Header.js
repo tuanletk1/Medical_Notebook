@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import Login from "../login/Login";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../login/authSlice";
 
 
 const Header = () => {
+    const authState = useSelector(state => state.auth)
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
+
   return (
     <header>
       <section className="header__content">
@@ -23,10 +32,16 @@ const Header = () => {
             <span>ĐĂNG KÝ</span>
           </a>
         </ul>
-        
-        <Link to={"/login"}>
-        <button className="btn-grad">ĐĂNG NHẬP</button>
-        </Link> 
+
+          {authState.isLoggedIn &&
+              <button className="btn-grad" onClick={logoutHandler}>ĐĂNG XUẤT</button>
+          }
+          {!authState.isLoggedIn &&
+              <Link to={"/login"}>
+                <button className="btn-grad">ĐĂNG NHẬP</button>
+              </Link>
+          }
+
       </section>
       <iframe
         src="https://covid19.vnanet.vn/home/indexwigetsummary"

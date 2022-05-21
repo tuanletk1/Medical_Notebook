@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MedicalStaff from './components/medicalStaff/MedicalStaff'
-import MedicalCity from './components/medicalCity/MedicalCity';
 import reportWebVitals from './reportWebVitals';
-import MedicalUser from './components/medicalUser/MedicalUser'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+import {Routes} from "./components/routes";
+import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <MedicalUser /> */}
-    {/* <MedicalStaff/> */}
-    <MedicalCity />
+    <Provider store={store}>
+        <Router>
+            <Routes/>
+        </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

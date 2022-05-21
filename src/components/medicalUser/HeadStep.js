@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../login/authSlice";
 const HeaderStep = () => {
+    const authState = useSelector(state => state.auth)
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
+
   return (
     <div className="header__content">
       <a href>
@@ -19,7 +28,15 @@ const HeaderStep = () => {
             <span>HỒ SƠ SỨC KHOẺ</span>
           </Link>
         </ul>
-      <button className="btn-grad">ĐĂNG XUẤT</button>
+
+        {authState.isLoggedIn &&
+            <button className="btn-grad" onClick={logoutHandler}>ĐĂNG XUẤT</button>
+        }
+        {!authState.isLoggedIn &&
+            <Link to={"/login"}>
+                <button className="btn-grad">ĐĂNG NHẬP</button>
+            </Link>
+        }
     </div>
   );
 };
