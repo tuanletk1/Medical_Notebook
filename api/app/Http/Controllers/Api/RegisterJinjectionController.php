@@ -110,4 +110,18 @@ class RegisterJinjectionController extends Controller
 
         return response()->success(null, $registerVaccination);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id Id of user need delete.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        RegisterInjection::findOrFail($id)->delete();
+
+        return response()->noContent();
+    }
 }
