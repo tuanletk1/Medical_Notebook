@@ -120,7 +120,9 @@ class RegisterJinjectionController extends Controller
      */
     public function destroy($id)
     {
-        RegisterInjection::findOrFail($id)->delete();
+        $registerInjection = RegisterInjection::findOrFail($id);
+        $registerInjection->preHistories->delete();
+        $registerInjection->delete();
 
         return response()->noContent();
     }
