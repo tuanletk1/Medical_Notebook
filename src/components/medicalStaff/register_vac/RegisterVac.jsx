@@ -9,16 +9,16 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function RegisterVac() {
     const dummyData = [
-        { id: 1, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 2, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 3, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 4, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 5, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 6, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 7, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 8, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 9, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
-        { id: 10, RegisterUserName: "Le Van Tuan", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
+        { id: 1, RegisterUserName: "Lê Quốc Việt", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
+        { id: 2, RegisterUserName: "Doãn Huỳnh", BirthDay: "3/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Chiều" },
+        { id: 3, RegisterUserName: "Nguyễn Ánh", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nữ", RegisterDay: "30/4/2022", RegisterSesion: "Cả ngày" },
+        { id: 4, RegisterUserName: "Mai Quốc Bảo", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
+        { id: 5, RegisterUserName: "Huỳnh Ngọc Chí", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nữ", RegisterDay: "30/4/2022", RegisterSesion: "Chiều" },
+        { id: 6, RegisterUserName: "Nguyễn Huy Hoàng", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nữ", RegisterDay: "30/4/2022", RegisterSesion: "Chiều" },
+        { id: 7, RegisterUserName: "Chu Bá Thông", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Chiều" },
+        { id: 8, RegisterUserName: "Võ Văn Vinh", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nữ", RegisterDay: "30/4/2022", RegisterSesion: "Cả ngày" },
+        { id: 9, RegisterUserName: "Le Van Tài", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Sáng" },
+        { id: 10, RegisterUserName: "Huỳnh Thị Thoi", BirthDay: "30/2/2000", Cmnd: "123456789", PhoneNumber: "09090909", Sex: "Nam", RegisterDay: "30/4/2022", RegisterSesion: "Chiều" },,
 
     ]
     

@@ -15,7 +15,7 @@ export default function Backup() {
             <div class="col ">
               <input type="checkbox" />
             </div>
-            <div class="col col-5">STT</div>
+            <div class="col col-2">STT</div>
             <div class="col col-6">Bảng</div>
             <div class="col col-7">Trạng thái</div>
             <div class="col col-8">Đồng bộ lần cuối</div>
@@ -25,7 +25,7 @@ export default function Backup() {
               <input type="checkbox" />
             </div>
             <div class="col ">1</div>
-            <div class="col col-2" data-label="Table Name">Danh sách tài khoản người dùng</div>
+            <div class="col col-3" data-label="Table Name">Danh sách tài khoản người dùng</div>
             <div class="col col-3" data-label="Status">
               <a class="status" href="">Hoạt động</a>
             </div>
@@ -36,7 +36,7 @@ export default function Backup() {
               <input type="checkbox" />
             </div>
             <div class="col ">2</div>
-            <div class="col col-2" data-label="Table Name">Danh sách tài khoản sở y tế</div>
+            <div class="col col-3" data-label="Table Name">Danh sách tài khoản sở y tế</div>
             <div class="col col-3" data-label="Status">
               <a class="status" href="">Hoạt động</a>
             </div>
@@ -47,7 +47,7 @@ export default function Backup() {
               <input type="checkbox" />
             </div>
             <div class="col ">3</div>
-            <div class="col col-2" data-label="Table Name">Danh sách cơ sở Bệnh viện</div>
+            <div class="col col-3" data-label="Table Name">Danh sách cơ sở Bệnh viện</div>
             <div class="col col-3" data-label="Status">
               <a class="status" href="">Hoạt động</a>
             </div>

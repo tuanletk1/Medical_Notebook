@@ -9,7 +9,7 @@ import InjectStep2 from "../pages/InjectStep2";
 import InjectStep3 from "../pages/InjectStep3";
 import InjectStep4 from "../pages/InjectStep4";
 import HealthAfterInjection from "../pages/HealthAfterInjection";
-import Profile from "../pages/ProfileUser";
+import ProfileUser from "../pages/ProfileUser";
 
 const Routes = () => {
   return (
@@ -21,7 +21,7 @@ const Routes = () => {
       <Route path="/inject-step3" component={InjectStep3} />
       <Route path="/inject-step4" component={InjectStep4} />
       <Route path="/HealthAfterInjection" component={HealthAfterInjection} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/ProfileUser" component={ProfileUser} />
 
     </Switch>
   );

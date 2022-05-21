@@ -385,125 +385,6 @@ const HealthAfterInjection = () => {
                               {/**/}
                             </div>
                           </div>
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Dân tộc{" "}
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Quốc tịch{" "}
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-6 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Nhóm ưu tiên{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
-                                  (*)
-                                </span>
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Họ và tên người giám hộ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <input
-                                _ngcontent-mjb-c9
-                                aria-describedby="helpId"
-                                className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="guardianFullName"
-                                type="text"
-                                placeholder="Họ và tên người giám hộ"
-                              />
-                             
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Quan hệ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                             
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Số điện thoại người giám hộ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <input
-                                _ngcontent-mjb-c9
-                                aria-describedby="helpId"
-                                className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="guardianPhoneNumber"
-                                nowhitespace
-                                type="text"
-                                placeholder="Số điện thoại người giám hộ"
-                              />
-                              
-                            </div>
-                          </div> */}
-
-
 
                           {/**/}
                           <div _ngcontent-mjb-c9 className="col-12" style={{ color: "red" }}>
@@ -1437,7 +1318,7 @@ const HealthAfterInjection = () => {
                     </div>
                   </div>
                   <div _ngcontent-mjb-c11 className="col-12 text-center">
-                    <Link to={"/ListHealthAfter"}>
+                    <Link to={"/"}>
                       <button
                         _ngcontent-mjb-c11
                         className="btn-secondary btn rounded radius20 p-2 mr-3 wbtn"
@@ -1450,7 +1331,7 @@ const HealthAfterInjection = () => {
                         Quay lại{" "}
                       </button>
                     </Link>
-                    <Link to={"/ListHealthAfter"}>
+                    <Link to={"/"}>
                       <button
                         _ngcontent-mjb-c11
                         className="btn-primary btn rounded radius20 p-2 wbtn"

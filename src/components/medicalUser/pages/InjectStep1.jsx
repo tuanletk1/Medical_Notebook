@@ -2,6 +2,14 @@ import HeaderStep from "../HeadStep";
 import { Link } from "react-router-dom";
 
 const Inject = () => {
+
+
+  // userEffect(()=>{
+  //   httpServices.get('').then(response =>{
+  //     console.log('=======123123123=====', response.data.data);
+  //   })
+  // });
+
   return (
     <>
       <HeaderStep />
@@ -425,7 +433,14 @@ const Inject = () => {
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
                               >
-                                <option value="sds">dsad</option>
+                                <option value="choose" >Hải Châu </option>
+                                <option value="choose" >Thanh Khê</option>
+                                <option value="choose" >Liên Chiểu</option>
+                                <option value="choose" >Sơn Trà </option>
+                                <option value="choose" >Cẩm Lệ </option>
+                                <option value="choose" >Hòa Vang</option>
+                                <option value="choose" >Đảo Hoàng Sa </option>
+                                <option value="choose" >Ngũ Hành Sơn </option>
                               </select>
                               {/**/}
                             </div>
@@ -444,7 +459,13 @@ const Inject = () => {
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
                               >
-                                <option value="choose" >zz</option>
+                                <option value="choose" >Bình Hiên</option>
+                                <option value="choose" >Bình Thuận</option>
+                                <option value="choose" >Hải Châu I</option>
+                                <option value="choose" >Hải Châu II </option>
+                                <option value="choose" >Hòa Cường Bắc </option>
+                                <option value="choose" >Hòa Cường Nam</option>
+                                <option value="choose" >Hòa Thuận Đông</option>
                               </select>
                               {/**/}
                             </div>

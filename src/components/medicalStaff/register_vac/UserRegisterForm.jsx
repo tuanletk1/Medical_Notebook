@@ -17,14 +17,7 @@ export default function UserRegisterForm() {
               className="d-flex justify-content-between align-items-center"
             >
               <h2 _ngcontent-mjb-c8>Đăng ký tiêm cá nhân</h2>
-              {/* <ol _ngcontent-mjb-c8>
-                <li _ngcontent-mjb-c8>
-                  <a _ngcontent-mjb-c8 href="/portal">
-                    Trang chủ
-                  </a>
-                </li>
-                <li _ngcontent-mjb-c8>Đăng ký tiêm</li>
-              </ol> */}
+             
             </div>
           </div>
         </section>
@@ -1354,10 +1347,11 @@ export default function UserRegisterForm() {
                           _ngcontent-mjb-c12
                           className="col-12 text-center mt-2 mb-2"
                         >
+                          <Link to={"/registervaccine"}>
                           <button
                             _ngcontent-mjb-c12
                             className="btn btn-primary rounded radius20 p-2 wbtn mr-4"
-                            routerlink="/portal"
+                            routerlink="/registervaccine"
                             type="button"
                             tabIndex={0}
                           >
@@ -1365,18 +1359,22 @@ export default function UserRegisterForm() {
                               _ngcontent-mjb-c12
                               className="fa fa-chervon-left"
                             />
-                            Trang chủ{" "}
+                            Bỏ qua{" "}
                           </button>
+                          </Link>
+                          <Link to={"/registervaccine"}>
                           <button
                             _ngcontent-mjb-c12
                             className="btn btn-outline-success rounded radius20 p-2 wbtn"
+                            routerlink="/registervaccine"
                           >
                             <i
                               _ngcontent-mjb-c12
                               className="bi bi-file-excel mr-1"
                             />
-                            Xuất thông tin{" "}
+                            Xác Nhận{" "}
                           </button>
+                          </Link>
                         </div>
                       </div>
                     </div>

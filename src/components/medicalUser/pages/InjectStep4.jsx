@@ -1,5 +1,5 @@
 import HeaderStep from "../HeadStep";
-
+import { Link } from "react-router-dom";
 
 const InjectStep4 = () => {
   return (
@@ -42,6 +42,7 @@ const InjectStep4 = () => {
                 <p _ngcontent-mjb-c8 className="mb-1">
                   Bước 1
                 </p>
+               
                 <h5 _ngcontent-mjb-c8 className="sfbold">
                   Thông tin cá nhân
                 </h5>
@@ -105,7 +106,7 @@ const InjectStep4 = () => {
                             của bạn là{" "}
                             <span className="text-red" style={{color:'red'}}>
                              
-                              {"{"} code {"}"}
+                              162
                             
                             </span>
                             .
@@ -138,61 +139,61 @@ const InjectStep4 = () => {
                         <hr _ngcontent-mjb-c12 />
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Họ và tên
+                            Họ và tên : Nguyễn Văn Anh
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Ngày sinh
+                            Ngày sinh : 30/2/2000
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Giới tính
+                            Giới tính : Nam
                           </p>
                           
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Số điện thoại
+                            Số điện thoại : 09090909
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            CCCD/Mã định danh công dân
+                            CCCD/Mã định danh công dân : 123456789
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Số thẻ BHYT
+                            Số thẻ BHYT : 1011101010111
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-12 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Địa chỉ hiện tại
+                            Địa chỉ hiện tại: 60 Lê Thị Tính
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Tỉnh/Thành phố
+                            Tỉnh/Thành phố : Đà Nẵng
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Quận/Huyện
+                            Quận/Huyện : Hải Châu
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
                         <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
                           <p _ngcontent-mjb-c12 className="mb-1">
-                            Xã/Phường
+                            Xã/Phường : Bình Hiên
                           </p>
                           <p _ngcontent-mjb-c12 className="sfbold text-dark" />
                         </div>
@@ -201,10 +202,11 @@ const InjectStep4 = () => {
                           _ngcontent-mjb-c12
                           className="col-12 text-center mt-2 mb-2"
                         >
+                          <Link to='./'>
                           <button
                             _ngcontent-mjb-c12
                             className="btn btn-primary rounded radius20 p-2 wbtn mr-4"
-                            routerlink="/portal"
+                            routerlink="/"
                             type="button"
                             tabIndex={0}
                           >
@@ -214,7 +216,8 @@ const InjectStep4 = () => {
                             />
                             Trang chủ{" "}
                           </button>
-                          <button
+                          </Link>
+                          {/* <button
                             _ngcontent-mjb-c12
                             className="btn btn-outline-success rounded radius20 p-2 wbtn"
                           >
@@ -223,7 +226,7 @@ const InjectStep4 = () => {
                               className="bi bi-file-excel mr-1"
                             />
                             Xuất thông tin{" "}
-                          </button>
+                          </button> */}
                         </div>
                       </div>
                     </div>
