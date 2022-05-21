@@ -8,19 +8,10 @@ import { login } from './authSlice';
 export default function Login() {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
-    const authState = useSelector(state => state.auth)
-    const history = useHistory()
 
     const onSubmit = data => {
         dispatch(login(data))
     }
-
-    useEffect(() =>{
-        if (authState.isLoggedIn === true){
-            console.log('abfc')
-            history.push('/')
-        }
-    }, [authState, history])
 
     return (
         <div className="containerLogin">
@@ -51,7 +42,7 @@ export default function Login() {
                                     </div>
                                     <span className="form-check">
                                         <input className="form-check-input" type="checkbox" value="remember" name="remember" id="remember" />
-                                        <label className="form-check-label" for="remember">Lưu mật khẩu</label>
+                                        <label className="form-check-label">Lưu mật khẩu</label>
                                     </span>
                                     <span className="forgetpass" ><a href="">Quên mật khẩu?</a></span>
                             </div>

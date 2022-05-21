@@ -1,12 +1,41 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { PermIdentity, Phone, Email  } from '@material-ui/icons'
 import CakeIcon from '@mui/icons-material/Cake';
 import HomeIcon from '@mui/icons-material/Home';
 import PublishIcon from '@mui/icons-material/Publish';
-import { Link } from "react-router-dom";
 import HeaderStep from '../HeadStep';
+import {useSelector} from "react-redux";
+import {userApi} from "../../../api/userApi";
+import {useForm} from "react-hook-form";
+import {useHistory} from "react-router-dom";
 
 export default function ProfileUser() {
+  const authState = useSelector(state => state.auth)
+  const [userProfile, setUserProfile] = useState()
+
+  const { register, handleSubmit } = useForm()
+
+  const onSubmit = async data => {
+    const user = {
+      ...data,
+      userId: authState.currentUser.id
+    }
+    const res = await userApi.update(user)
+
+  }
+
+  useEffect( () => {
+    async function getUserProfile() {
+      try {
+        const res = await userApi.get(authState.currentUser?.id)
+        setUserProfile(res.data.data)
+      }catch (e) {
+        setUserProfile(undefined)
+      }
+    }
+    getUserProfile()
+  }, [])
+
   return (
     
     <div className='user'>
@@ -19,7 +48,7 @@ export default function ProfileUser() {
             <div className="userShowTop">
               <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-default-avatar-png-image_5407175.jpg" alt="" className='userShowImg' />
               <div className="userShowTopTitle"> 
-                <span className="userShowUsername">PhamCong</span>
+                <span className="userShowUsername">{userProfile?.fullname}</span>
                 <span className="userShowUserTitle">Người dùng</span>
               </div>
             </div>
@@ -27,7 +56,7 @@ export default function ProfileUser() {
               <span className="userShowTitle">Chi tiết tài khoản</span>
               <div className="userShowInfo">
                 <PermIdentity className='userShowInfo'/>
-                <span className="userShowInfoTitle">Phạm Hoàng Công</span>
+                <span className="userShowInfoTitle">{userProfile?.fullname}</span>
               </div>
               <div className="userShowInfo">
                 <CakeIcon className='userShowInfo'/>
@@ -35,60 +64,45 @@ export default function ProfileUser() {
               </div>
               <div className="userShowInfo">
                 <Phone className='userShowInfo'/>
-                <span className="userShowInfoTitle">0865558065</span>
+                <span className="userShowInfoTitle">{userProfile?.phone}</span>
               </div>
               <div className="userShowInfo">
                 <Email className='userShowInfo'/>
-                <span className="userShowInfoTitle">Tuanletk1@gmail.com</span>
+                <span className="userShowInfoTitle">{userProfile?.email}</span>
               </div>
               <div className="userShowInfo">
                 <HomeIcon className='userShowInfo'/>
-                <span className="userShowInfoTitle">60 Lê Thị Tính, phường An Khê, quận Thanh Khê,TP Đà Nẵng</span>
+                <span className="userShowInfoTitle">{userProfile?.workplace}</span>
               </div>
             </div>
           </div>
           <div className="userUpdate">
             <span className="userUpdateTitle">Chỉnh Sửa</span>
-            <form className='userUpdateForm'>
+            <form className='userUpdateForm' onSubmit={handleSubmit(onSubmit)}>
               <div className="userUpdateLeft">
                 <div className="userUpdateItem">
-                  <label>Tài khoản</label>
-                  <input type="text" placeholder='Tuanle123'className='userUpdateInput' />
-                </div>
-                <div className="userUpdateItem">
                   <label>Họ và tên</label>
-                  <input type="text" placeholder='Le Van Tuan'className='userUpdateInput' />
+                  <input type="text" placeholder='full name' className='userUpdateInput' {...register("fullname")} />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Ngày sinh</label>
-                  <input type="date" placeholder=''className='userUpdateInput' />
+                  <label>CCCD/CMND </label>
+                  <input type="text" placeholder='' className='userUpdateInput' {...register("cmnd_cccd")}/>
+                </div>
+                <div className="userUpdateItem">
+                  <label>Nghề nghiệp </label>
+                  <input type="text" placeholder='' className='userUpdateInput' {...register("job")}/>
                 </div>
                 <div className="userUpdateItem">
                   <label>Số điện thoại</label>
-                  <input type="text" placeholder='+84'className='userUpdateInput' />
+                  <input type="text" placeholder='+84' className='userUpdateInput' {...register("phone")} />
                 </div>
                 <div className="userUpdateItem">
                   <label>Email</label>
-                  <input type="text" placeholder=''className='userUpdateInput' />
-                </div>
-                
-              </div>
-              <div className="userUpdateLeft">
-                <div className="userUpdateItem">
-                  <label>Địa chỉ/ Số nhà</label>
-                  <input type="text" placeholder=''className='userUpdateInput' />
+                  <input type="text" placeholder='' className='userUpdateInput' {...register("email")}/>
                 </div>
                 <div className="userUpdateItem">
-                  <label>Xã/Phường</label>
-                  <input type="text" placeholder=''className='userUpdateInput' />
-                </div>
-                <div className="userUpdateItem">
-                  <label>Quận/Huyện</label>
-                  <input type="text" placeholder=''className='userUpdateInput' />
-                </div>
-                <div className="userUpdateItem">
-                  <label>Tỉnh/Thành phố</label>
-                  <input type="text" placeholder=''className='userUpdateInput' />
+                  <label>Password</label>
+                  <input type="text" placeholder='' className='userUpdateInput' {...register("password")}/>
                 </div>
                
               </div>
@@ -98,7 +112,7 @@ export default function ProfileUser() {
                   <label htmlFor="file"><PublishIcon className='userUpdateIcon'/></label>
                   <input type="file" id="file" style={{display:"none"}}/>
                 </div>
-                <button className="userUpdateButton">Cập nhật</button>
+                <button className="userUpdateButton" type={'submit'}>Cập nhật</button>
               </div>
             </form>
           </div>

@@ -1,232 +1,214 @@
 import HeaderStep from "../HeadStep";
 import { Link } from "react-router-dom";
+import {useQuery} from "../../../hook/useQuery";
+import {useSelector} from "react-redux";
+import db from '../../../assets/db.json'
 
 const InjectStep4 = () => {
+  const query = useQuery()
+  const id = query.get('id')
+
+  const injectState = useSelector(state => state.inject)
+  const city = db.province.find(pro => pro.idProvince === injectState.step1?.city)
+  const district = db.district.find(dis => dis.idDistrict === injectState.step1?.district)
+  const ward = db.commune.find(com => com.idCommune === injectState.step1?.ward)
   return (
     <>
       <HeaderStep />
-      <main _ngcontent-mjb-c8 id="main">
+      <main  id="main">
         <section
-          _ngcontent-mjb-c8
+
           className="breadcrumbs hiddentext"
           style={{ margin: " 0 auto", width: "100%" }}
         >
-          <div _ngcontent-mjb-c8 className="container">
+          <div  className="container">
             <div
-              _ngcontent-mjb-c8
+
               className="d-flex justify-content-between align-items-center"
             >
-              <h2 _ngcontent-mjb-c8>Đăng ký tiêm cá nhân</h2>
-              {/* <ol _ngcontent-mjb-c8>
-                <li _ngcontent-mjb-c8>
-                  <a _ngcontent-mjb-c8 href="/portal">
-                    Trang chủ
-                  </a>
-                </li>
-                <li _ngcontent-mjb-c8>Đăng ký tiêm</li>
-              </ol> */}
+              <h2 >Đăng ký tiêm cá nhân</h2>
             </div>
           </div>
         </section>
         <section
-          _ngcontent-mjb-c8
+
           className="inner-page mt30"
           style={{ width: "100%" }}
         >
-          <div _ngcontent-mjb-c8 className="container mt-3">
-            <div _ngcontent-mjb-c8 className="rowUser bg-light mb-5 shadow">
+          <div  className="container mt-3">
+            <div  className="rowUser bg-light mb-5 shadow">
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 1
                 </p>
                
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Thông tin cá nhân
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 2
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Tiền sử bệnh
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 3
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Phiếu đồng ý tiêm
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right rounded bgstep"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 4
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Hoàn thành
                 </h5>
               </div>
             </div>
             
-            <app-step-four _ngcontent-mjb-c8 _nghost-mjb-c12 >
-              <div _ngcontent-mjb-c12 className="rowUser">
-                <div _ngcontent-mjb-c12 className="col-lg-12">
+            <app-step-four  >
+              <div  className="rowUser">
+                <div  className="col-lg-12">
                   <div
-                    _ngcontent-mjb-c12
+
                     className="rowUser"
                     style={{ height: "auto" }}
                   >
                     <div
-                      _ngcontent-mjb-c12
+
                       className="col-12 aos-init aos-animate"
                       data-aos="fade-up"
                       data-aos-delay={200}
                     >
-                      <div _ngcontent-mjb-c12 className="rowUser">
+                      <div  className="rowUser">
                         <div
-                          _ngcontent-mjb-c12
+
                           className="col-12 text-center mb-5"
                         >
-                          <h5 _ngcontent-mjb-c12 className="sfbold">
+                          <h5  className="sfbold">
                             Đăng ký tiêm chủng COVID-19 thành công. Mã đặt tiêm
                             của bạn là{" "}
                             <span className="text-red" style={{color:'red'}}>
                              
-                              162
+                              {id}
                             
                             </span>
                             .
                           </h5>
-                          <p _ngcontent-mjb-c12>
+                          <p >
                             Cảm ơn quý khách đã đăng ký tiêm chủng vắc xin
                             COVID-19. Hiện tại Bộ y tế đang tiến hành thu thập
                             nhu cầu và thông tin để lập danh sách đối tượng đăng
                             ký tiêm vắc xin COVID-19 theo từng địa bàn. Chúng
                             tôi sẽ liên hệ với quý khách theo số điện thoại{" "}
-                            <span className="text-primary sfbold">
-                              {" "}
-                              {"{"}
-                              {"{"} phone {"}"}
-                              {"}"}{" "}
-                            </span>{" "}
+                            <span className="text-primary sfbold" style={{color: 'red'}}>{injectState.step1?.phoneNumber}</span>
+                            {" "}
                             khi có kế hoạch tiêm trong thời gian sớm nhất.
                           </p>
-                          <br _ngcontent-mjb-c12 />
-                          <p _ngcontent-mjb-c12>
-                            Mời bạn tải ứng dụng "SỔ SỨC KHỎE ĐIỆN TỬ" tại
-                            <a href="https://hssk.kcb.vn/#/sskdt">
-                              {" "}
-                              https://hssk.kcb.vn/#/sskdt{" "}
-                            </a>
-                            để theo dõi kết quả đăng ký tiêm và nhận chứng nhận
+                          <br  />
+                          <p >
+                            Mời bạn tải ứng dụng "SỔ SỨC KHỎE ĐIỆN TỬ" <a href="https://hssk.kcb.vn/#/sskdt">tại đây</a> để theo dõi kết quả đăng ký tiêm và nhận chứng nhận
                             tiêm chủng COVID-19
                           </p>
                         </div>
-                        <hr _ngcontent-mjb-c12 />
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Họ và tên : Nguyễn Văn Anh
+                        <hr  />
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Họ và tên : {injectState.step1?.name}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Ngày sinh : 30/2/2000
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Ngày sinh : {injectState.step1?.dateOfBirth}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Giới tính : Nam
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Giới tính : {parseInt(injectState.step1?.sex) ? 'Nữ' : 'Nam'}
                           </p>
                           
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Số điện thoại : 09090909
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Số điện thoại : {injectState.step1?.phoneNumber}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            CCCD/Mã định danh công dân : 123456789
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            CCCD/Mã định danh công dân : {injectState.step1?.identityCode}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Số thẻ BHYT : 1011101010111
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Số thẻ BHYT : {injectState.step1?.socialInsurance}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-12 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Địa chỉ hiện tại: 60 Lê Thị Tính
+                        <div  className="col-lg-12 col-md-6">
+                          <p  className="mb-1">
+                            Địa chỉ hiện tại: {injectState.step1?.address}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Tỉnh/Thành phố : Đà Nẵng
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Tỉnh/Thành phố : {city.name}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Quận/Huyện : Hải Châu
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Quận/Huyện : {district.name}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6">
-                          <p _ngcontent-mjb-c12 className="mb-1">
-                            Xã/Phường : Bình Hiên
+                        <div  className="col-lg-4 col-md-6">
+                          <p  className="mb-1">
+                            Xã/Phường : {ward.name}
                           </p>
-                          <p _ngcontent-mjb-c12 className="sfbold text-dark" />
+                          <p  className="sfbold text-dark" />
                         </div>
-                        <div _ngcontent-mjb-c12 className="col-lg-4 col-md-6" />
+                        <div  className="col-lg-4 col-md-6" />
                         <div
-                          _ngcontent-mjb-c12
+
                           className="col-12 text-center mt-2 mb-2"
                         >
                           <Link to='./'>
                           <button
-                            _ngcontent-mjb-c12
+
                             className="btn btn-primary rounded radius20 p-2 wbtn mr-4"
-                            routerlink="/"
                             type="button"
                             tabIndex={0}
                           >
                             <i
-                              _ngcontent-mjb-c12
+
                               className="fa fa-chervon-left"
                             />
                             Trang chủ{" "}
                           </button>
                           </Link>
-                          {/* <button
-                            _ngcontent-mjb-c12
-                            className="btn btn-outline-success rounded radius20 p-2 wbtn"
-                          >
-                            <i
-                              _ngcontent-mjb-c12
-                              className="bi bi-file-excel mr-1"
-                            />
-                            Xuất thông tin{" "}
-                          </button> */}
                         </div>
                       </div>
                     </div>

@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../login/authSlice";
 const HeaderStep = () => {
     const authState = useSelector(state => state.auth)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const logoutHandler = () => {
         dispatch(logout())
+        history.push('/')
     }
 
   return (

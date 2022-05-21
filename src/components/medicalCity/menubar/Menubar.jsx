@@ -2,27 +2,33 @@ import React from 'react'
 import './menubarAdmin.css';
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/images/MedicalNotebook.png';
-import LogoutIcon from '@mui/icons-material/Logout';
+import {useDispatch} from "react-redux";
+import {logout} from "../../login/authSlice";
 
 export default function Menubar() {
+    const dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+    }
     return (
 
         <div className="group_menu">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__listlogo">
+            <nav className="nav">
+                <ul className="nav__list">
+                    <li className="nav__listlogo">
                         <img src={logo} alt="" />
                         {/* <h2>MEDICAL NOTEBOOK</h2> */}
                     </li>
                     <Link to='/' className='link'>
-                        <li class="nav__listitem">Trang chủ</li>
+                        <li className="nav__listitem">Trang chủ</li>
                     </Link>
                     
                     <Link to='/PersonalInfo' className='link'>
-                        <li class="nav__listitem">Thông tin cá nhân</li>
+                        <li className="nav__listitem">Thông tin cá nhân</li>
                     </Link>
-                    <li class="nav__listitem">Quản lý tài khoản
-                        <ul class="nav__listitemdrop">
+                    <li className="nav__listitem">Quản lý tài khoản
+                        <ul className="nav__listitemdrop">
                             <Link to='/user' className='link'>
                                 <li><a href="#">Người dùng</a></li>
                             </Link>
@@ -35,8 +41,8 @@ export default function Menubar() {
 
                         </ul>
                     </li>
-                    <li class="nav__listitem">Quản lý dữ liệu
-                        <ul class="nav__listitemdrop">
+                    <li className="nav__listitem">Quản lý dữ liệu
+                        <ul className="nav__listitemdrop">
                             <Link to='/backup' className='link'>
                                 <li><a href="#">Sao lưu dữ liệu</a></li>
                             </Link>
@@ -45,8 +51,7 @@ export default function Menubar() {
                             </Link>
                         </ul>
                     </li>
-                    
-                    <li class="nav__listitem">Đăng xuất</li>
+                    <li className="nav__listitem" onClick={logoutHandler}>Đăng xuất</li>
 
                 </ul>
             </nav>

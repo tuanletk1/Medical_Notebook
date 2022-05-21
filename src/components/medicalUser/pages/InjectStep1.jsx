@@ -1,123 +1,165 @@
 import HeaderStep from "../HeadStep";
-import { Link } from "react-router-dom";
+import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {addStep1, clearInjectState} from "../injectSlice";
+import {useHistory} from "react-router-dom";
+import {useQuery} from "../../../hook/useQuery";
+import {useEffect, useState} from "react";
+import db from '../../../assets/db.json'
+import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup';
+
+const schema = yup.object().shape({
+  name: yup
+      .string()
+      .required('Tên không được bỏ trống'),
+  phoneNumber: yup
+      .string()
+      .matches(/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/, {message: 'Số điện thoại không hợp lệ'}),
+  dateOfBirth: yup.string().required('Ngày sinh không được bỏ trống'),
+  email: yup.string().matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, {message: 'Email không hợp lệ'}),
+  identityCode: yup
+      .string()
+      .required('CCCD không được bỏ trống')
+      .matches(/^[0-9]{12}$/, {message: 'CCCD không hợp lệ'}),
+  socialInsurance: yup.string().required('BHYT không được bỏ trống').matches(/^[0-9]{13}$/, {message: 'BHYT không hợp lệ'}),
+  job: yup.string().required('Nghề nghiệp không được bỏ trống'),
+  workplace: yup.string().required('Đơn vị công tác không được bỏ trống'),
+  address: yup.string().required('Địa chỉ hiện tại không được bỏ trống'),
+  dateInjection: yup.string().required('Ngày muốn được tiêm không được bỏ trống'),
+  timeOfDay: yup.string().required('Buổi tiêm mong muốn không được bỏ trống'),
+})
 
 const Inject = () => {
+  const [district, setDistrict] = useState([])
+  const [ward, setWard] = useState([])
 
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  })
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const query = useQuery()
 
-  // userEffect(()=>{
-  //   httpServices.get('').then(response =>{
-  //     console.log('=======123123123=====', response.data.data);
-  //   })
-  // });
+  useEffect(() => {
+    const dis = db.district.filter(dis => dis.idProvince === watch('city'))
+    setDistrict(dis)
+
+    const wards = db.commune.filter(com => com.idDistrict === watch('district'))
+    setWard(wards)
+  }, [watch('city'), watch('district')])
+
+  useEffect(() => {
+    if (query.get('action') !== 'back'){
+      dispatch(clearInjectState())
+    }
+  })
+
+  const onSubmit = data => {
+    dispatch(addStep1(data))
+    history.push('/inject-step2')
+  }
 
   return (
     <>
       <HeaderStep />
-      <main _ngcontent-mjb-c8 id="main">
+      <main  id="main">
         <section
-          _ngcontent-mjb-c8
+
           className="breadcrumbs hiddentext"
           style={{ margin: " 0 auto", width: "100%" }}
         >
-          <div _ngcontent-mjb-c8 className="container">
+          <div  className="container">
             <div
-              _ngcontent-mjb-c8
+
               className="d-flex justify-content-between align-items-center"
             >
-              <h2 _ngcontent-mjb-c8>Đăng ký tiêm cá nhân</h2>
-              {/* <ol _ngcontent-mjb-c8>
-                <li _ngcontent-mjb-c8>
-                  <a _ngcontent-mjb-c8 href="/portal">
-                    Trang chủ
-                  </a>
-                </li>
-                <li _ngcontent-mjb-c8>Đăng ký tiêm</li>
-              </ol> */}
+              <h2 >Đăng ký tiêm cá nhân</h2>
             </div>
           </div>
         </section>
         <section
-          _ngcontent-mjb-c8
+
           className="inner-page mt30"
           style={{ width: "100%" }}
         >
-          <div _ngcontent-mjb-c8 className="container mt-3">
-            <div _ngcontent-mjb-c8 className="rowUser bg-light mb-5 shadow">
+          <div  className="container mt-3">
+            <div  className="rowUser bg-light mb-5 shadow">
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right rounded bgstep"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 1
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Thông tin cá nhân
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 2
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Tiền sử bệnh
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 border-right text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 3
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Phiếu đồng ý tiêm
                 </h5>
               </div>
               <div
-                _ngcontent-mjb-c8
+
                 className="col-lg-3 col-6 p-2 text-black-50"
               >
-                <p _ngcontent-mjb-c8 className="mb-1">
+                <p  className="mb-1">
                   Bước 4
                 </p>
-                <h5 _ngcontent-mjb-c8 className="sfbold">
+                <h5  className="sfbold">
                   Hoàn thành
                 </h5>
               </div>
             </div>
-            <app-step-one _ngcontent-mjb-c8 _nghost-mjb-c9>
-              <div _ngcontent-mjb-c9 className="rowUser">
-                <div _ngcontent-mjb-c9 className="col-12">
-                  <div _ngcontent-mjb-c9 className="rowUser">
+            <app-step-one >
+              <div  className="rowUser">
+                <div  className="col-12">
+                  <div  className="rowUser">
                     <div
-                      _ngcontent-mjb-c9
+
                       className="col-12 text-center mb-3"
                     ></div>
                   </div>
-                  <div _ngcontent-mjb-c9 className="rowUser">
+                  <div  className="rowUser">
                     <form
-                      _ngcontent-mjb-c9
                       noValidate
                       role="form"
                       className="ng-pristine ng-invalid ng-touched"
+                      onSubmit={handleSubmit(onSubmit)}
                     >
                       {/**/}
                       <div
-                        _ngcontent-mjb-c9
+
                         className="col-12 aos-init aos-animate"
                         data-aos="fade-up"
                         data-aos-delay={300}
                       >
-                        <div _ngcontent-mjb-c9 className="rowUser">
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-3">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                        <div  className="rowUser">
+                          <div  className="col-lg-3 col-md-3">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Đăng kí mũi tiêm thứ{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
@@ -125,118 +167,69 @@ const Inject = () => {
                                 name=""
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
+                                {...register("theSecondTime")}
                               >
-                                <option value="sds">Mũi tiêm thứ nhất</option>
-                                <option value="sds">Mũi tiêm tiếp theo</option>
+                                <option value="1">Mũi tiêm thứ nhất</option>
+                                <option value="2">Mũi tiêm tiếp theo</option>
                               </select>
                               {/**/}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-12 mb-2">
-                            <h6 _ngcontent-mjb-c9 className="sfbold">
+                          <div  className="col-12 mb-2">
+                            <h6  className="sfbold">
                               1. Thông tin người đăng ký tiêm
                             </h6>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Họ và tên{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-pristine ng-invalid ng-touched"
-                                formcontrolname="fullname"
                                 id="fullname"
                                 type="text"
                                 placeholder="Họ và tên"
+                                {...register("name")}
                               />
-                              {/**/}
-                              <div
-                                _ngcontent-mjb-c9
-                                className="ng-star-inserted"
-                              >
-                                {/**/}
-                                <small
-                                  _ngcontent-mjb-c9
-                                  className="form-text text-danger ng-star-inserted"
-                                >
-                                  Họ và tên không được bỏ trống{" "}
-                                </small>
-                              </div>
+                              {errors.name && <p style={{color: 'red'}}>{errors.name?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Ngày sinh{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+                                  type='date'
                                 className="form-control w-100 ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="dateOfBirth"
                                 placeholder="Ngày/Tháng/Năm"
-                                aria-haspopup="dialog"
-                                min="1900-01-31T17:17:56Z"
-                                max="2022-05-16T09:46:22Z"
+                                {...register("dateOfBirth")}
                               />
-                              <mat-datepicker-toggle
-                                _ngcontent-mjb-c9
-                                className="iconfix mat-datepicker-toggle"
-                                matsuffix
-                                tabIndex={-1}
-                              >
-                                <button
-                                  className="mat-focus-indicator mat-icon-button mat-button-base"
-                                  mat-icon-button
-                                  type="button"
-                                  aria-haspopup="dialog"
-                                  aria-label="Open calendar"
-                                  tabIndex={0}
-                                >
-                                  <span className="mat-button-wrapper">
-                                    {/**/}
-                                    <svg
-                                      className="mat-datepicker-toggle-default-icon ng-star-inserted"
-                                      fill="currentColor"
-                                      focusable="false"
-                                      height="24px"
-                                      viewBox="0 0 24 24"
-                                      width="24px"
-                                    >
-                                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
-                                    </svg>
-                                  </span>
-                                  <div
-                                    className="mat-button-ripple mat-ripple mat-button-ripple-round"
-                                    matripple
-                                  />
-                                  <div className="mat-button-focus-overlay" />
-                                </button>
-                              </mat-datepicker-toggle>
-                              <mat-datepicker _ngcontent-mjb-c9 />
-                              {/**/}
+                              {errors.dateOfBirth && <p style={{color: 'red'}}>{errors.dateOfBirth?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Giới tính{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
                               <ng-select
-                                _ngcontent-mjb-c9
+
                                 formcontrolname="gender"
                                 role="listbox"
                                 className="ng-select ng-select-single ng-select-searchable ng-select-clearable ng-untouched ng-pristine ng-invalid"
@@ -244,27 +237,11 @@ const Inject = () => {
                                 <div className="ng-select-container">
                                   <div className="ng-value-container">
                                     <div className="ng-placeholder">
-
-                                      <input type="radio" name='gender' />
-                                      Nam
-                                      <input type="radio" name='gender' />
-                                      Nữ
+                                      <input {...register("sex")} type="radio" value="0" checked/> Nam
+                                      <input {...register("sex")} type="radio" value="1" /> Nữ
 
                                     </div>
-
-                                    {/* <div className="ng-input">
-                                      <input
-                                        role="combobox"
-                                        type="text"
-                                        autoCorrect="off"
-                                        autoCapitalize="off"
-                                        autoComplete="acce14c82fb6"
-                                        aria-expanded="false"
-                                      />
-                                    </div> */}
                                   </div>
-                                  {/**/}
-                                  {/**/}
                                   <span className="ng-arrow-wrapper">
                                     <span className="ng-arrow" />
                                   </span>
@@ -274,138 +251,136 @@ const Inject = () => {
                               {/**/}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Số điện thoại {/**/}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="phoneNumber"
-                                nowhitespace
                                 type="text"
                                 placeholder="Số điện thoại"
+                                {...register("phoneNumber")}
                               />
-                              {/**/}
+                              {errors.phoneNumber && <p style={{color: 'red'}}>{errors.phoneNumber?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Email{" "}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-untouched ng-pristine ng-valid"
-                                formcontrolname="email"
-                                nowhitespace
                                 type="email"
                                 placeholder="Email"
+                                {...register("email")}
                               />
-                              {/**/}
+                              {errors.email && <p style={{color: 'red'}}>{errors.email?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-6 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-6 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 CCCD/Mã định danh công dân {/**/}
                                 <span
-                                  _ngcontent-mjb-c9
+
                                   className="text-danger ng-star-inserted"
                                 >
                                   (*)
                                 </span>
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="identification"
-                                nowhitespace
                                 type="text"
                                 placeholder="CCCD/Mã định danh công dân"
+                                {...register("identityCode")}
                               />
-                              {/**/}
+                              {errors.identityCode && <p style={{color: 'red'}}>{errors.identityCode?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Số thẻ BHYT{" "}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-untouched ng-pristine ng-valid"
-                                formcontrolname="healthInsuranceNumber"
-                                nowhitespace
                                 type="text"
                                 placeholder="Số thẻ BHYT"
+                                {...register("socialInsurance")}
                               />
-                              {/**/}
+                              {errors.socialInsurance && <p style={{color: 'red'}}>{errors.socialInsurance?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Nghề nghiệp{" "}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 className="form-control ng-untouched ng-pristine ng-valid"
-                                formcontrolname="jobName"
                                 maxLength={200}
                                 type="text"
                                 placeholder="Nghề nghiệp"
+                                {...register("job")}
                               />
-                              {/**/}
+                              {errors.job && <p style={{color: 'red'}}>{errors.job?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Đơn vị công tác{" "}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 className="form-control ng-untouched ng-pristine ng-valid"
-                                formcontrolname="workplace"
                                 maxLength={255}
                                 type="text"
                                 placeholder="Đơn vị công tác"
+                                {...register("workplace")}
                               />
+                              {errors.workplace && <p style={{color: 'red'}}>{errors.workplace?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-6 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-6 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 Địa chỉ hiện tại
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+
                                 aria-describedby="helpId"
                                 className="form-control ng-untouched ng-pristine ng-valid"
-                                formcontrolname="address"
                                 maxLength={255}
                                 type="text"
                                 placeholder="Địa chỉ hiện tại"
+                                {...register("address")}
                               />
+                              {errors.address && <p style={{color: 'red'}}>{errors.address?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 Tỉnh/Thành phố
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
@@ -414,17 +389,19 @@ const Inject = () => {
                                 name=""
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
+                                {...register("city")}
+                                  defaultValue={'48'}
                               >
-                                <option value="sds">Đà Nẵng</option>
+                                {db.province.map(prov => <option value={prov.idProvince}>{prov.name}</option>)}
                               </select>
                               {/**/}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 Quận/Huyện{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
@@ -432,24 +409,18 @@ const Inject = () => {
                                 name=""
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
+                                {...register("district")}
                               >
-                                <option value="choose" >Hải Châu </option>
-                                <option value="choose" >Thanh Khê</option>
-                                <option value="choose" >Liên Chiểu</option>
-                                <option value="choose" >Sơn Trà </option>
-                                <option value="choose" >Cẩm Lệ </option>
-                                <option value="choose" >Hòa Vang</option>
-                                <option value="choose" >Đảo Hoàng Sa </option>
-                                <option value="choose" >Ngũ Hành Sơn </option>
+                                {district?.map(dis => <option value={dis.idDistrict}>{dis.name}</option>)}
                               </select>
                               {/**/}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-6 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-6 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 Xã/Phường
-                                <span _ngcontent-mjb-c9 className="text-danger">
+                                <span  className="text-danger">
                                   (*)
                                 </span>
                               </label>
@@ -458,161 +429,36 @@ const Inject = () => {
                                 name=""
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
+                                {...register("ward")}
                               >
-                                <option value="choose" >Bình Hiên</option>
-                                <option value="choose" >Bình Thuận</option>
-                                <option value="choose" >Hải Châu I</option>
-                                <option value="choose" >Hải Châu II </option>
-                                <option value="choose" >Hòa Cường Bắc </option>
-                                <option value="choose" >Hòa Cường Nam</option>
-                                <option value="choose" >Hòa Thuận Đông</option>
+                                {ward?.map(war => <option value={war.idCommune}>{war.name}</option>)}
                               </select>
-                              {/**/}
                             </div>
                           </div>
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Dân tộc{" "}
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Quốc tịch{" "}
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-6 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Nhóm ưu tiên{" "}
-                                <span _ngcontent-mjb-c9 className="text-danger">
-                                  (*)
-                                </span>
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Họ và tên người giám hộ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <input
-                                _ngcontent-mjb-c9
-                                aria-describedby="helpId"
-                                className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="guardianFullName"
-                                type="text"
-                                placeholder="Họ và tên người giám hộ"
-                              />
-                             
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Quan hệ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <select
-                                name=""
-                                id=""
-                                className="form-control ng-untouched ng-pristine ng-valid"
-                              >
-                                <option value="sds">dsad</option>
-                              </select>
-                             
-                            </div>
-                          </div> */}
-                          {/* <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
-                                {" "}
-                                Số điện thoại người giám hộ 
-                                <span
-                                  _ngcontent-mjb-c9
-                                  className="text-danger ng-star-inserted"
-                                >
-                                  (*)
-                                </span>
-                              </label>
-                              <input
-                                _ngcontent-mjb-c9
-                                aria-describedby="helpId"
-                                className="form-control ng-untouched ng-pristine ng-invalid"
-                                formcontrolname="guardianPhoneNumber"
-                                nowhitespace
-                                type="text"
-                                placeholder="Số điện thoại người giám hộ"
-                              />
-                              
-                            </div>
-                          </div> */}
-                          <div _ngcontent-mjb-c9 className="col-12 mb-2">
-                            <h6 _ngcontent-mjb-c9 className="sfbold">
+                          <div  className="col-12 mb-2">
+                            <h6  className="sfbold">
                               2. Thông tin đăng ký tiêm chủng
                             </h6>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group mb-0">
-                              <label _ngcontent-mjb-c9>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group mb-0">
+                              <label >
                                 {" "}
                                 Ngày muốn được tiêm (dự kiến){" "}
                               </label>
                               <input
-                                _ngcontent-mjb-c9
+                                type='date'
                                 className="form-control w-100 ng-untouched ng-pristine ng-valid"
-                                formcontrolname="dateOfInjectRegistration"
                                 placeholder="Ngày/Tháng/Năm"
-                                aria-haspopup="dialog"
-                                min="1900-01-31T17:17:56Z"
+                                {...register("dateInjection")}
                               />
 
-                              {/**/}
+                              {errors.dateInjection && <p style={{color: 'red'}}>{errors.dateInjection?.message}</p>}
                             </div>
                           </div>
-                          <div _ngcontent-mjb-c9 className="col-lg-3 col-md-12">
-                            <div _ngcontent-mjb-c9 className="form-group">
-                              <label _ngcontent-mjb-c9 htmlFor>
+                          <div  className="col-lg-3 col-md-12">
+                            <div  className="form-group">
+                              <label  htmlFor>
                                 {" "}
                                 Buổi tiêm mong muốn{" "}
                               </label>
@@ -620,40 +466,41 @@ const Inject = () => {
                                 name=""
                                 id=""
                                 className="form-control ng-untouched ng-pristine ng-valid"
+                                {...register("timeOfDay")}
                               >
-                                <option value="Choose">Buổi sáng</option>
-                                <option value="Choose">Buổi tối</option>
-                                <option value="Choose">Cả ngày</option>
+                                <option value="Morning">Buổi sáng</option>
+                                <option value="Afternoon">Buổi chiều</option>
+                                <option value="All day">Cả ngày</option>
                               </select>
                             </div>
                           </div>
                           {/**/}
-                          <div _ngcontent-mjb-c9 className="col-12" style={{ color: "red" }}>
+                          <div  className="col-12" style={{ color: "red" }}>
                             <h6
-                              _ngcontent-mjb-c9
+
                               className="sfbold text-danger"
                             >
                               Lưu ý:
                             </h6>
-                            <ul _ngcontent-mjb-c9 className="text-danger">
-                              <li _ngcontent-mjb-c9>
+                            <ul  className="text-danger">
+                              <li >
                                 {" "}
                                 Việc đăng ký thông tin hoàn toàn bảo mật và phục
                                 vụ cho chiến dịch tiêm chủng Vắc xin COVID - 19{" "}
                               </li>
-                              <li _ngcontent-mjb-c9>
+                              <li >
                                 {" "}
                                 Xin vui lòng kiểm tra kỹ các thông tin bắt
                                 buộc(VD: Họ và tên, Ngày tháng năm sinh, Số điện
                                 thoại, CCCD/Mã định danh công dân/HC ...){" "}
                               </li>
-                              <li _ngcontent-mjb-c9>
+                              <li >
                                 {" "}
                                 Bằng việc nhấn nút "Xác nhận", bạn hoàn toàn
                                 hiểu và đồng ý chịu trách nhiệm với các thông
                                 tin đã cung cấp.{" "}
                               </li>
-                              <li _ngcontent-mjb-c9>
+                              <li >
                                 {" "}
                                 Nếu bạn dưới 18 tuổi, vui lòng nhập số điện
                                 thoại của người giám hộ để tra cứu{" "}
@@ -661,35 +508,30 @@ const Inject = () => {
                             </ul>
                           </div>
                           <div
-                            _ngcontent-mjb-c9
+
                             className="col-12 text-center mt-2 mb-2"
                           >
                             <button
-                              _ngcontent-mjb-c9
+
                               className="btn btn-outline-danger  rounded radius20 p-2 wbtn mr-4"
                               type="button"
                             >
                               <i
-                                _ngcontent-mjb-c9
+
                                 className="fa fa-chervon-left"
-                              />{" "}
-                              Hủy bỏ{" "}
+                              />
+                              Hủy bỏ
                             </button>
-                            <Link to={"/Inject-step2"}>
                               <button
-                                _ngcontent-mjb-c11
                                 className="btn-primary btn rounded radius20 p-2 wbtn"
-                                type="button"
+                                type="submit"
 
                               >
-                                {" "}
-                                Xác nhận{" "}
+                                Xác nhận
                                 <i
-                                  _ngcontent-mjb-c11
                                   className="icofont-rounded-right ml-0"
                                 />
                               </button>
-                            </Link>
                           </div>
 
                         </div>

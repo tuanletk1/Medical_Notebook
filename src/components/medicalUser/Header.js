@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Login from "../login/Login";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../login/authSlice";
@@ -7,9 +7,11 @@ import {logout} from "../login/authSlice";
 const Header = () => {
     const authState = useSelector(state => state.auth)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const logoutHandler = () => {
         dispatch(logout())
+        history.push('/')
     }
 
   return (
@@ -22,15 +24,25 @@ const Header = () => {
           <Link to={"/"}>
             <span>TRANG CHỦ</span>
           </Link>
-          <Link to={"/Inject"}>
-            <span>ĐĂNG KÝ TIÊM CHỦNG</span>
-          </Link>
-          <Link to={"/"}>
-            <span>HỒ SƠ SỨC KHOẺ</span>
-          </Link>        
-          <a href="#">
-            <span>ĐĂNG KÝ</span>
-          </a>
+            {authState.isLoggedIn &&
+                <>
+                    <Link to={"/ProfileUser"}>
+                        <span>THÔNG TIN CÁ NHÂN</span>
+                    </Link>
+                    <Link to={"/Inject"}>
+                        <span>ĐĂNG KÝ TIÊM CHỦNG</span>
+                    </Link>
+                    <Link to={"/"}>
+                        <span>HỒ SƠ SỨC KHOẺ</span>
+                    </Link>
+                </>
+            }
+
+            {!authState.isLoggedIn &&
+                <a href="#">
+                    <span>ĐĂNG KÝ</span>
+                </a>
+            }
         </ul>
 
           {authState.isLoggedIn &&

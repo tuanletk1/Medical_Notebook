@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Dialog from '@mui/material/Dialog';
 import { useHistory } from 'react-router-dom';
+import {useSelector} from "react-redux";
+import {registerInjectionApi} from "../../api/registerInjectionApi";
 export default function OpenOTP(props) {
     const history = useHistory();
     const Wrapper = styled.section`
@@ -90,10 +92,21 @@ export default function OpenOTP(props) {
             visibility: visible;
         }
     `;
+
+    const injectState = useSelector(state => state.inject)
     const handleClose = () => {
         props.setOpen(false);
-        history.push('/Inject-step4')
     };
+
+    const confirmHandler = async () => {
+        const injectionData = {
+            ...injectState.step1,
+            ...injectState.step2
+        }
+        const res = await registerInjectionApi.create(injectionData)
+        const id = res.data.data.id
+        history.push(`/inject-step4?id=${id}`)
+    }
     return (
         <Wrapper>
             <Dialog
@@ -117,8 +130,8 @@ export default function OpenOTP(props) {
                     <p className="pupup-line_2">Nếu bạn không nhận được tin nhắn, xin vui lòng thử lại sau: </p>
                     <p className="pupup-line_3">00:01:00</p>
                     <div className="pupup-control">
-                        <a onclick="togglePupup()">Hủy bỏ</a>
-                        <a onClick={handleClose}>Xác nhận</a>
+                        <a onClick={handleClose}>Hủy bỏ</a>
+                        <a onClick={confirmHandler}>Xác nhận</a>
                     </div>
                 </div>
             </Dialog>
