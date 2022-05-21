@@ -9,8 +9,8 @@ import MedicalUser from './components/medicalUser/MedicalUser'
 ReactDOM.render(
   <React.StrictMode>
     {/* <MedicalUser /> */}
-    <MedicalStaff/>
-    {/* <MedicalCity /> */}
+    {/* <MedicalStaff/> */}
+    <MedicalCity />
   </React.StrictMode>,
   document.getElementById('root')
 );

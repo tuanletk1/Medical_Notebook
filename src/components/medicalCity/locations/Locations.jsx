@@ -5,15 +5,21 @@ import SearchIcon from '@mui/icons-material/Search';
 export default function Locations() {
     const dummyData = [
         { id: 1, Sitename: "Trung tâm Y tế quận Liên Chiểu", NumberStreet: "525 Tôn Đức Thắng", Ward: "Hòa Khánh Nam", District: "Liên Chiểu", Sitemanager: "Lê Văn Sỹ", Numbertable: "9" },
-        { id: 2, Sitename: "Bệnh viện Giao thông vận tải", NumberStreet: "68 Hoàng Văn Thái", Ward: "", District: "Liên Chiểu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 3, Sitename: "Bệnh viện Hoàn Mỹ", NumberStreet: "291 Nguyễn Văn Linh", Ward: "", District: "Thanh Khê", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 4, Sitename: "Trung tâm Y tế quận Thanh Khê", NumberStreet: "62 Hà Huy Tập", Ward: "", District: "Thanh Khê", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 5, Sitename: "Trung tâm Y tế quận Hải Châu", NumberStreet: "Nguyễn Trọng Phương", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 6, Sitename: "Trung tâm Kiểm soát bệnh tật thành phố Đà Nẵng", NumberStreet: "103 Hùng Vương", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 7, Sitename: "Công ty Cổ phần Y khoa Bác Sỹ Gia Đình", NumberStreet: "2 Nguyễn Hữu Thọ", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 8, Sitename: "Bệnh viện Quân Y 17", NumberStreet: "73 Nguyễn Hữu Thọ", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 9, Sitename: "Bệnh viện Phụ Sản Nhi Đà Nẵng Cơ sở 2", NumberStreet: "26C Chu Văn An	", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
-        { id: 10, Sitename: "Bệnh viện đa khoa quốc tế Vinmec Đà Nẵng", NumberStreet: "30 Tháng 4", Ward: "", District: "Hải Châu", Province: "", Sitemanager: "", Numbertable: "" },
+        { id: 2, Sitename: "Bệnh viện Giao thông vận tải", NumberStreet: "68 Hoàng Văn Thái", Ward: "Hòa Minh", District: "Liên Chiểu", Province: "", Sitemanager: "Trần Viết Gia", Numbertable: "3" },
+        { id: 3, Sitename: "Bệnh viện Hoàn Mỹ", NumberStreet: "291 Nguyễn Văn Linh", Ward: "Thạc Gián", District: "Thanh Khê", Province: "", Sitemanager: "Phạm Nguyễn Cẩm Thạch", Numbertable: "3" },
+        { id: 4, Sitename: "Trung tâm Y tế quận Thanh Khê", NumberStreet: "62 Hà Huy Tập", Ward: "Hoà Khê", District: "Thanh Khê", Province: "", Sitemanager: "Võ Duy Trinh", Numbertable: "14" },
+        { id: 5, Sitename: "Trung tâm Y tế quận Hải Châu", NumberStreet: "Nguyễn Trọng Phương", Ward: "Thanh Bình", District: "Hải Châu", Province: "", Sitemanager: "Lê Thị Phương Khanh", Numbertable: "17" },
+        { id: 6, Sitename: "Trung tâm Kiểm soát bệnh tật thành phố Đà Nẵng", NumberStreet: "103 Hùng Vương", Ward: "Hải Châu I", District: "Hải Châu", Province: "", Sitemanager: "Tôn Thất Thạnh", Numbertable: "3" },
+        { id: 7, Sitename: "Công ty Cổ phần Y khoa Bác Sỹ Gia Đình", NumberStreet: "2 Nguyễn Hữu Thọ", Ward: "Hoà Thuận Tây", District: "Hải Châu", Province: "", Sitemanager: "Trần Hùng", Numbertable: "3" },
+        { id: 8, Sitename: "Bệnh viện Quân Y 17", NumberStreet: "73 Nguyễn Hữu Thọ", Ward: "Hoà Thuận Tây", District: "Hải Châu", Province: "", Sitemanager: "Nguyễn Hồng Hà", Numbertable: "2" },
+        { id: 9, Sitename: "Bệnh viện Phụ Sản Nhi Đà Nẵng Cơ sở 2", NumberStreet: "26C Chu Văn An", Ward: "Bình Hiên", District: "Hải Châu", Province: "", Sitemanager: "Trần Đình Vinh", Numbertable: "2" },
+        { id: 10, Sitename: "Bệnh viện đa khoa quốc tế Vinmec Đà Nẵng", NumberStreet: "30 Tháng 4", Ward: "Hoà Cường Bắc", District: "Hải Châu", Province: "", Sitemanager: "Nguyễn Tường Vân", Numbertable: "3" },
+        { id: 11, Sitename: "Trung Tâm Y Tế quận Sơn Trà", NumberStreet: "1118 Ngô Quyền", Ward: "An Hải Bắc", District: "Hải Châu", Province: "", Sitemanager: "Phạm Hồng Nam", Numbertable: "11" },
+        { id: 12, Sitename: "Bệnh viện Đa Khoa Tâm Trí", NumberStreet: "402 Lê Văn Hiến", Ward: "Mỹ An", District: "Hải Châu", Province: "", Sitemanager: "Trần Đình Vinh", Numbertable: "4" },
+        { id: 13, Sitename: "Trung tâm Y tế quận Ngũ Hành Sơn", NumberStreet: "582 Lê Văn Hiến", Ward: "Hoà Hải", District: "Sơn Trà", Province: "", Sitemanager: "Nguyễn Văn Dũng", Numbertable: "4" },
+        { id: 14, Sitename: "Bệnh viện Đa Khoa Tâm Trí", NumberStreet: "63 Cách Mạng Tháng 8", Ward: "Khuê Trung", District: "Ngũ Hành Sơn", Province: "", Sitemanager: "Võ Văn Thu", Numbertable: "3" },
+        { id: 15, Sitename: "Trung tâm Y tế quận Cẩm Lệ", NumberStreet: "105 Nguyễn Nhàn", Ward: "Hoà Thọ Đông", District: "Cẩm Lệ", Province: "", Sitemanager: "Trần Thiện Hùng", Numbertable: "10" },
+        { id: 16, Sitename: "Trung tâm Y tế huyện Hòa Vang", NumberStreet: "Thôn Thạch Nam Đông", Ward: "Hoà Nhơn", District: "Hoà Vang", Province: "", Sitemanager: "Nguyễn Đại Vĩnh", Numbertable: "8" },
     ]
     const handleSearch = function () {
         let filter = document.getElementById("myInput").value.toUpperCase();
