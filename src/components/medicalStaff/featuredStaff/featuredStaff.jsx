@@ -7,28 +7,28 @@ export default function FeaturedStaff() {
             <div className="featuredItem">
                 <span className="featuredTitle">TIÊM THÀNH CÔNG</span>
                 <div className="featuredContainer">
-                    <span className="featuredTotal">1231123</span>
+                    <span className="featuredTotal">1053200</span>
                     <span className="featuredTotalName"></span>
                 </div>
             </div>
             <div className="featuredItem">
                 <span className="featuredTitle">ĐĂNG KÝ TRONG NGÀY</span>
                 <div className="featuredContainer">
-                    <span className="featuredTotal">000000000</span>
+                    <span className="featuredTotal">150</span>
                     <span className="featuredTotalName"></span>
                 </div>
             </div>
             <div className="featuredItem">
                 <span className="featuredTitle">VẮC XIN CÒN DƯ</span>
                 <div className="featuredContainer">
-                    <span className="featuredTotal">000000000</span>
+                    <span className="featuredTotal">10500</span>
                     <span className="featuredTotalName"></span>
                 </div>
             </div>
             <div className="featuredItem">
                 <span className="featuredTitle">VẮC XIN TIÊM NHIỀU NHẤT</span>
                 <div className="featuredContainer">
-                    <span className="featuredTotal">000000000</span>
+                    <span className="featuredTotal">Prizer</span>
                     <span className="featuredTotalName"></span>
                 </div>
             </div>

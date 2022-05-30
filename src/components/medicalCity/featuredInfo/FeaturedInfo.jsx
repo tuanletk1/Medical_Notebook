@@ -7,15 +7,15 @@ export default function FeaturedInfo() {
         <div className="featuredItem">
           <span className="featuredTitle">Số mũi tiêm hôm qua</span>
           <div className="featuredContainer">
-            <span className="featuredTotal">1231123</span>
-            <span className="featuredTotalName">(vaccin)</span>
+            <span className="featuredTotal">658,999</span>
+            <span className="featuredTotalName">(mũi)</span>
           </div>
         </div>
         <div className="featuredItem">
-          <span className="featuredTitle">Số mũi đã tiêm thành phô</span>
+          <span className="featuredTitle">Số mũi đã tiêm thành phố</span>
           <div className="featuredContainer">
-            <span className="featuredTotal">000000000</span>
-            <span className="featuredTotalName">(vaccin)</span>
+            <span className="featuredTotal">218,799,777</span>
+            <span className="featuredTotalName">(mũi)</span>
           </div>
         </div>
     </div>

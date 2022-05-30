@@ -45,7 +45,7 @@ export default function RegisterVac() {
         {
             field: 'time_of_day',
             headerName: 'Buổi tiêm',
-            width: 200,
+            width: 180,
         },
         {
             field: 'action',
@@ -67,14 +67,14 @@ export default function RegisterVac() {
 
 
     return (
-        <div style={{ height: 530, width: '100%', padding: '0px 100px' }}>
+        <div style={{ height: 650, width: '100%', padding: '0px 100px' }}>
             <div className="titleName">
                 <label >Danh sách đăng ký tiêm</label>
             </div>
             <DataGrid
                 rows={data} disableSelectionOnClick
                 columns={columns}
-                pageSize={8}
+                pageSize={10}
                 checkboxSelection
             />
         </div>
